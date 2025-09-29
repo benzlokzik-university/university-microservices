@@ -1,0 +1,1751 @@
+{
+  "type": "unidraw",
+  "version": 1,
+  "source": "https://unidraw.io",
+  "elements": [
+    {
+      "id": "eM6TRj756AmlVsKOy7gb7",
+      "position": {
+        "x": 4620.74880881453,
+        "y": 775.4536980000001
+      },
+      "size": {
+        "width": 483,
+        "height": 521
+      },
+      "version": 352,
+      "versionNonce": 668604758,
+      "createdAt": 1759170871633,
+      "updatedAt": 1759173161381,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -6,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p>Отзывы</p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "OzY347xuG4NS5BvXO5qP3",
+      "position": {
+        "x": 3875.917371500658,
+        "y": 775.491995
+      },
+      "size": {
+        "width": 697.8674968209948,
+        "height": 520.9234053349414
+      },
+      "version": 296,
+      "versionNonce": 1372534922,
+      "createdAt": 1759170867533,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -5,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p>Оплата</p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "2iHyg-f70XzcnWOTy2fmS",
+      "position": {
+        "x": 2537.025031908838,
+        "y": 775.836247
+      },
+      "size": {
+        "width": 1295,
+        "height": 536
+      },
+      "version": 184,
+      "versionNonce": 1963764886,
+      "createdAt": 1759170861033,
+      "updatedAt": 1759172464171,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -4,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p>Аренда</p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "1EnOn8SE0TijgKve8OB3g",
+      "position": {
+        "x": 2214.4824693917467,
+        "y": 775.8362469999998
+      },
+      "size": {
+        "width": 257.15874943220933,
+        "height": 535.7144609999999
+      },
+      "version": 186,
+      "versionNonce": 1788618326,
+      "createdAt": 1759170849616,
+      "updatedAt": 1759173212165,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -3,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p>Бронирование</p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "axxgP1EsjVPsY0m-nRpo2",
+      "position": {
+        "x": 1023.3250085889154,
+        "y": 755.8076770000001
+      },
+      "size": {
+        "width": 1139,
+        "height": 552
+      },
+      "version": 411,
+      "versionNonce": 814753482,
+      "createdAt": 1759170841349,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -2,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p>Каталог игр</p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "GLhUX5r3KEUqHnG6bK5br",
+      "position": {
+        "x": 313.7248359235906,
+        "y": 910.3580857749799
+      },
+      "size": {
+        "width": 657.4427129450673,
+        "height": 396.26781822502005
+      },
+      "version": 220,
+      "versionNonce": 191244694,
+      "createdAt": 1759170823732,
+      "updatedAt": 1759172804926,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": -1,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "frame",
+      "schema": 2,
+      "text": "<p><strong>Аккаунт пользователя</strong></p>",
+      "isExposed": true,
+      "children": [],
+      "style": {
+        "tc": "#CCCCCC",
+        "tfs": 13,
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "ta": "s",
+        "tva": "s",
+        "ss": "s",
+        "fc": "#ffffff",
+        "fs": "s",
+        "sc": "#CCCCCC",
+        "sw": 2
+      }
+    },
+    {
+      "id": "3qneO9dE6ivKPRX3BE7jN",
+      "position": {
+        "x": 632.8863205859733,
+        "y": 413.8609132606711
+      },
+      "size": {
+        "width": 405,
+        "height": 90
+      },
+      "version": 93,
+      "versionNonce": 879897354,
+      "createdAt": 1759167993751,
+      "updatedAt": 1759173105405,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 1,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "text",
+      "schema": 2,
+      "text": "<p><strong>Задание 1</strong></p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 80,
+        "ta": "s",
+        "tva": "s"
+      }
+    },
+    {
+      "id": "wZeUgtbOC5Hqxivv5KyMS",
+      "position": {
+        "x": 368.27975417701157,
+        "y": 1071.8578427075363
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 366,
+      "versionNonce": 1687904970,
+      "createdAt": 1759168059707,
+      "updatedAt": 1759172804926,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 3,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Пользователь зарегестрирован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 15,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "yTrOOmpd_rlxOQhF-rZHc",
+      "position": {
+        "x": 559.962633421698,
+        "y": 1071.8578429912795
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 349,
+      "versionNonce": 1331201750,
+      "createdAt": 1759168072581,
+      "updatedAt": 1759172804926,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 4,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Пользователь авторизован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "1rcmTyJMI77SCYruaXT6g",
+      "position": {
+        "x": 309.17845165256927,
+        "y": 1330.2546477052617
+      },
+      "size": {
+        "width": 4839.579181722695,
+        "height": 3.0636940137376314
+      },
+      "version": 832,
+      "versionNonce": 145067630,
+      "createdAt": 1759168101514,
+      "updatedAt": 1759173195391,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 5,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "line",
+      "schema": 2,
+      "points": [],
+      "style": {
+        "ss": "s",
+        "sc": "#3A3A3A",
+        "sw": 2,
+        "fc": "transparent",
+        "fs": "s",
+        "lst": 0,
+        "let": 2,
+        "lt": "c"
+      },
+      "tipPoints": {
+        "start": {
+          "snappedToEdge": false,
+          "position": {
+            "x": 309.17845165256927,
+            "y": 1333.3183417189994
+          },
+          "absolutePosition": {
+            "x": 309.17845165256927,
+            "y": 1333.3183417189994
+          }
+        },
+        "end": {
+          "snappedToEdge": false,
+          "position": {
+            "x": 5148.757633375264,
+            "y": 1330.2546477052617
+          },
+          "absolutePosition": {
+            "x": 5148.757633375264,
+            "y": 1330.2546477052617
+          }
+        }
+      }
+    },
+    {
+      "id": "ypcHjJ7DZOzn1c3Np13iD",
+      "position": {
+        "x": 5036.144867430787,
+        "y": 1364.055597639313
+      },
+      "size": {
+        "width": 95,
+        "height": 90
+      },
+      "version": 91,
+      "versionNonce": 1790086102,
+      "createdAt": 1759168111889,
+      "updatedAt": 1759173171042,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 6,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "text",
+      "schema": 2,
+      "text": "<p>t-&gt;</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 80,
+        "ta": "s",
+        "tva": "s"
+      }
+    },
+    {
+      "id": "YIBr5qKo72qCQ-gTnkS3v",
+      "position": {
+        "x": 629.962632642357,
+        "y": 1383.3681183597112
+      },
+      "size": {
+        "width": 1888,
+        "height": 362
+      },
+      "version": 328,
+      "versionNonce": 1749246346,
+      "createdAt": 1759168144890,
+      "updatedAt": 1759173182798,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 7,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "text",
+      "schema": 2,
+      "text": "<p><strong>Глосарий</strong></p><p></p><p><strong>Пользователь </strong>- зарегистрированное лицо, которое может бронировать и арендовать игры</p><p><strong>Игра</strong> - настольная игра как абстрактное понятие в каталоге (например, &quot;Каркассон&quot;)</p><p><strong>Бронирование</strong> - временная резервация игры на определенную дату, не гарантирует аренду до оплаты</p><p><strong>Заказ</strong> - подтвержденное бронирование с оплатой, включающее информацию о доставке</p><p><strong>Аренда</strong> - период времени, в течение которого игра находится у клиента</p><p><strong>Штраф</strong> - дополнительная плата за просрочку возврата</p><p><strong>Доступность</strong> - статус игры: доступна для аренды, зарезервирована, на руках у клиента, на проверке, в ремонте</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 36,
+        "ta": "s",
+        "tva": "s"
+      }
+    },
+    {
+      "id": "yMgDvvyWWSL5cugB5mRAY",
+      "position": {
+        "x": 774.3664417135349,
+        "y": 977.0897824870211
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 174,
+      "versionNonce": 932002838,
+      "createdAt": 1759169896597,
+      "updatedAt": 1759172804926,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 8,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Аккаунт заблокирован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "Xb4xVJHeUhRiApimA3KDU",
+      "position": {
+        "x": 774.3664417124062,
+        "y": 1141.8578431486285
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 205,
+      "versionNonce": 1433958794,
+      "createdAt": 1759169907287,
+      "updatedAt": 1759172804926,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 9,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Аккаунт разблокирован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 17,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "MWTH_RtiQjMlWZkzqJcB_",
+      "position": {
+        "x": 1588.1003258906576,
+        "y": 948.8076773672032
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 399,
+      "versionNonce": 1789343766,
+      "createdAt": 1759169972824,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 10,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра добавлена в каталог</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 25,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "IUqlyrLbYbHNg_a4vKUfK",
+      "position": {
+        "x": 1762.5066851232746,
+        "y": 959.7023261597247
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 446,
+      "versionNonce": 1620606026,
+      "createdAt": 1759169984056,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 11,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Информация об игре обновлена</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "8sDDFI6eadA4fVzSatIyb",
+      "position": {
+        "x": 1964.2243308351703,
+        "y": 959.7023258324349
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 573,
+      "versionNonce": 1069329046,
+      "createdAt": 1759169993967,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 12,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра помечена как недоступная</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 21,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "HswQQzf7Khs0Oqd2CTHHs",
+      "position": {
+        "x": 2265.892930416147,
+        "y": 804.8228887307356
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 256,
+      "versionNonce": 274055370,
+      "createdAt": 1759170030599,
+      "updatedAt": 1759173212165,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 13,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра забронирована</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 17,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "wBYVb8A1Xk2HPGHVuaTsC",
+      "position": {
+        "x": 2265.89292981705,
+        "y": 978.0033790510065
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 140,
+      "versionNonce": 2016471958,
+      "createdAt": 1759170058895,
+      "updatedAt": 1759173212165,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 14,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Бронирование отменено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "40kf3HgMrQEOH_thdV9ZU",
+      "position": {
+        "x": 2265.8929295944013,
+        "y": 1146.782647152706
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 165,
+      "versionNonce": 962630154,
+      "createdAt": 1759170072715,
+      "updatedAt": 1759173212165,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 15,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Бронирование подтверждено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "OGeuw4DgwefHzvB-NStOw",
+      "position": {
+        "x": 2549.5925950596356,
+        "y": 1053.4339603461362
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 361,
+      "versionNonce": 94727178,
+      "createdAt": 1759170136860,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 17,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Заказ создан</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 38,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "k7aciaIioTkEv5fGRezUi",
+      "position": {
+        "x": 2732.008848829967,
+        "y": 930.4862602251864
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 341,
+      "versionNonce": 538223946,
+      "createdAt": 1759170142924,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 18,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Заказа оплачен</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 32,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "MW91LUmBuduq_Ny-3UXu4",
+      "position": {
+        "x": 2945.989615243783,
+        "y": 1068.292214953382
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 259,
+      "versionNonce": 1928288970,
+      "createdAt": 1759170178036,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 20,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Уведомление о дате и месте самовывоза отправлено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "MB9Kr7nAebHN2j9am1gjX",
+      "position": {
+        "x": 3132.376478713092,
+        "y": 1068.292215163805
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 189,
+      "versionNonce": 582922646,
+      "createdAt": 1759170198759,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 22,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Получение игры подтвержено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 20,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "ZitqtmIlTfBN7y0qMp17Y",
+      "position": {
+        "x": 3321.5369093706267,
+        "y": 986.4588484034406
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 243,
+      "versionNonce": 1731635670,
+      "createdAt": 1759170284693,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 23,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Срок Аренды продлён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 31,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "dMw9WkbjkdJry7EdNZdhk",
+      "position": {
+        "x": 3321.53690889022,
+        "y": 817.577671578752
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 250,
+      "versionNonce": 819105738,
+      "createdAt": 1759170298625,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 24,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Напоминание о возврате отправлено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "qgshztfu5QvkNpAD6eJsQ",
+      "position": {
+        "x": 3490.6252256413018,
+        "y": 908.0033785816986
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 262,
+      "versionNonce": 1279395466,
+      "createdAt": 1759170381328,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 25,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра возвращена</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 22,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "1Y0StA3DB_6eELF-oxRO2",
+      "position": {
+        "x": 3659.7135430077797,
+        "y": 911.2444071053643
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 223,
+      "versionNonce": 363790102,
+      "createdAt": 1759170394055,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 26,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Возврат подтверждён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 20,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "aEUIB3gwobi5gY58cICQZ",
+      "position": {
+        "x": 3490.625226465463,
+        "y": 1123.4339603829035
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 197,
+      "versionNonce": 1720545674,
+      "createdAt": 1759170494980,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 27,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Штраф начислен</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 28,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "VJMpxwSvmWZk5WYZencqW",
+      "position": {
+        "x": 3895.1782185423153,
+        "y": 1001.4701286119436
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 304,
+      "versionNonce": 1615195414,
+      "createdAt": 1759170533602,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 28,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Платёж инициирован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "2veBWMYUc219WkRWiGmjA",
+      "position": {
+        "x": 4062.2782375139573,
+        "y": 910.9001553753285
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 362,
+      "versionNonce": 175364694,
+      "createdAt": 1759170548196,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 29,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Платёж успешно проведён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 27,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "yW8lxlmL-glTPjmnu_APV",
+      "position": {
+        "x": 4062.2782378083225,
+        "y": 1084.9957708874026
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 352,
+      "versionNonce": 556504906,
+      "createdAt": 1759170562008,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 30,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Платёж отклонён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 28,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "DIrca8AI0rbSKt0balA85",
+      "position": {
+        "x": 4229.378257418397,
+        "y": 997.9479631656692
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 462,
+      "versionNonce": 1796087306,
+      "createdAt": 1759170594355,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 31,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Возврат средств инициирован</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "OmQrLh4IeSMjo1jjYoch9",
+      "position": {
+        "x": 4396.478276082376,
+        "y": 898.1477432153687
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 529,
+      "versionNonce": 720510870,
+      "createdAt": 1759170615672,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 32,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>возврат средств выполнен</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 26,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "5fhlaGcbTgEZNUjvKLbm8",
+      "position": {
+        "x": 4671.561850514215,
+        "y": 872.902613772685
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 370,
+      "versionNonce": 1597537942,
+      "createdAt": 1759170706186,
+      "updatedAt": 1759173161381,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 33,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Оценка оставлена</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 26,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "AZxgPS61hqhjQTjDr3XVs",
+      "position": {
+        "x": 4875.3410582937,
+        "y": 968.1094462317584
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 646,
+      "versionNonce": 763682250,
+      "createdAt": 1759170718449,
+      "updatedAt": 1759173161381,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 34,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Рейтинг игры обновлён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 27,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "-aCh0rBAAcKAW8Lmutm6z",
+      "position": {
+        "x": 4671.561851007483,
+        "y": 1053.0514113852314
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 335,
+      "versionNonce": 1836011274,
+      "createdAt": 1759170754487,
+      "updatedAt": 1759173161364,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 35,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Комментарий оставлен</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "euVm1h6gHrEB-5n2UxGLr",
+      "position": {
+        "x": 3321.5369086538585,
+        "y": 1155.3400231551814
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 128,
+      "versionNonce": 2053115606,
+      "createdAt": 1759171297337,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 37,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Срок аренды завершён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 27,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "Fv8X7NP9XqFHLug4WeLPk",
+      "position": {
+        "x": 1762.5066852484292,
+        "y": 1125.2553768648304
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 345,
+      "versionNonce": 1886635350,
+      "createdAt": 1759171999858,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 43,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Фотографии игры загружены</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 21,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "-YKrVuz12bQKxFLzm3rSS",
+      "position": {
+        "x": 4396.478275959113,
+        "y": 1071.4701289037093
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 206,
+      "versionNonce": 1282526410,
+      "createdAt": 1759172096622,
+      "updatedAt": 1759173159298,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 44,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Возврат средств отклонён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 28,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "FWs8vVDvovfFXX8rEznl3",
+      "position": {
+        "x": 2732.0088494059055,
+        "y": 1113.41679891887
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 137,
+      "versionNonce": 350923862,
+      "createdAt": 1759172150013,
+      "updatedAt": 1759172464172,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 45,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Заказ отменён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 31,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "2cKgsVU0QGtmIaHqCml-A",
+      "position": {
+        "x": 1762.5066852984428,
+        "y": 794.1492752413392
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 391,
+      "versionNonce": 1435919114,
+      "createdAt": 1759172351927,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 46,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Количество доступных к аренде игр обновлено</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 22,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "3MHEa4IU_blh8Q3FKHxld",
+      "position": {
+        "x": 1096.3308862356166,
+        "y": 959.7023258840621
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 504,
+      "versionNonce": 665416138,
+      "createdAt": 1759172481171,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 47,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игры отсорированы</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 18,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "PIuDUePoPyXldZb47BdLq",
+      "position": {
+        "x": 1342.215606253963,
+        "y": 839.8247964796612
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 263,
+      "versionNonce": 1312079242,
+      "createdAt": 1759172548534,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 48,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра не найдена</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 31,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "rdWHynP47KrSEDxsUGFVD",
+      "position": {
+        "x": 1342.2156060025,
+        "y": 1018.8076774693812
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 231,
+      "versionNonce": 2097283798,
+      "createdAt": 1759172636198,
+      "updatedAt": 1759173205248,
+      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 49,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Игра найдена</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 31,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
