@@ -4,23 +4,23 @@
   "source": "https://unidraw.io",
   "elements": [
     {
-      "id": "eM6TRj756AmlVsKOy7gb7",
+      "id": "LG_dhaxQnWsRnWUZM9BHW",
       "position": {
-        "x": 4620.74880881453,
-        "y": 775.4536980000001
+        "x": 153.54168163537452,
+        "y": -4272.147316058912
       },
       "size": {
         "width": 483,
         "height": 521
       },
-      "version": 352,
-      "versionNonce": 668604758,
-      "createdAt": 1759170871633,
-      "updatedAt": 1759173161381,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1466917999,
+      "createdAt": 1759174314993,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -6,
+      "zIndex": -12,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -45,23 +45,23 @@
       }
     },
     {
-      "id": "OzY347xuG4NS5BvXO5qP3",
+      "id": "M1j57uNYbQArr5N3Ov8Ob",
       "position": {
-        "x": 3875.917371500658,
-        "y": 775.491995
+        "x": -591.2897556784974,
+        "y": -4272.109019058912
       },
       "size": {
         "width": 697.8674968209948,
         "height": 520.9234053349414
       },
-      "version": 296,
-      "versionNonce": 1372534922,
-      "createdAt": 1759170867533,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 620404225,
+      "createdAt": 1759174314992,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -5,
+      "zIndex": -11,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -86,23 +86,23 @@
       }
     },
     {
-      "id": "2iHyg-f70XzcnWOTy2fmS",
+      "id": "PoAfv_Sht26L0r7ohKeNA",
       "position": {
-        "x": 2537.025031908838,
-        "y": 775.836247
+        "x": -1930.1820952703174,
+        "y": -4271.764767058912
       },
       "size": {
         "width": 1295,
         "height": 536
       },
-      "version": 184,
-      "versionNonce": 1963764886,
-      "createdAt": 1759170861033,
-      "updatedAt": 1759172464171,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 872873615,
+      "createdAt": 1759174314992,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -4,
+      "zIndex": -10,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -127,23 +127,23 @@
       }
     },
     {
-      "id": "1EnOn8SE0TijgKve8OB3g",
+      "id": "QHgQrQy7iYI9N53lkPMco",
       "position": {
-        "x": 2214.4824693917467,
-        "y": 775.8362469999998
+        "x": -2252.724657787409,
+        "y": -4271.764767058912
       },
       "size": {
         "width": 257.15874943220933,
         "height": 535.7144609999999
       },
-      "version": 186,
-      "versionNonce": 1788618326,
-      "createdAt": 1759170849616,
-      "updatedAt": 1759173212165,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 853095905,
+      "createdAt": 1759174314991,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -3,
+      "zIndex": -9,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -168,23 +168,23 @@
       }
     },
     {
-      "id": "axxgP1EsjVPsY0m-nRpo2",
+      "id": "d8Y-8oIQjV6T_zXE9MFxO",
       "position": {
-        "x": 1023.3250085889154,
-        "y": 755.8076770000001
+        "x": -3443.88211859024,
+        "y": -4291.793337058913
       },
       "size": {
         "width": 1139,
         "height": 552
       },
-      "version": 411,
-      "versionNonce": 814753482,
-      "createdAt": 1759170841349,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1793479855,
+      "createdAt": 1759174314990,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -2,
+      "zIndex": -8,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -209,23 +209,23 @@
       }
     },
     {
-      "id": "GLhUX5r3KEUqHnG6bK5br",
+      "id": "uPyWFKzss4GoVvfH2tNmf",
       "position": {
-        "x": 313.7248359235906,
-        "y": 910.3580857749799
+        "x": -4291.039578310498,
+        "y": -4183.451739058913
       },
       "size": {
-        "width": 657.4427129450673,
-        "height": 396.26781822502005
+        "width": 795,
+        "height": 433
       },
-      "version": 220,
-      "versionNonce": 191244694,
-      "createdAt": 1759170823732,
-      "updatedAt": 1759172804926,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1478226337,
+      "createdAt": 1759174314988,
+      "updatedAt": 1759175155785,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": -1,
+      "zIndex": -7,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -250,23 +250,23 @@
       }
     },
     {
-      "id": "3qneO9dE6ivKPRX3BE7jN",
+      "id": "OoZdn-aOcnKQXW_fDuioa",
       "position": {
-        "x": 632.8863205859733,
-        "y": 413.8609132606711
+        "x": -3834.320806593182,
+        "y": -4633.740100798242
       },
       "size": {
         "width": 405,
         "height": 90
       },
-      "version": 93,
-      "versionNonce": 879897354,
-      "createdAt": 1759167993751,
-      "updatedAt": 1759173105405,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 87211361,
+      "createdAt": 1759174314998,
+      "updatedAt": 1759175155831,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 1,
+      "zIndex": 13,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -284,23 +284,23 @@
       }
     },
     {
-      "id": "wZeUgtbOC5Hqxivv5KyMS",
+      "id": "KZYvf3-Ls96RAZc6IUPak",
       "position": {
-        "x": 368.27975417701157,
-        "y": 1071.8578427075363
+        "x": -4248.899075002144,
+        "y": -3985.219800351376
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 366,
-      "versionNonce": 1687904970,
-      "createdAt": 1759168059707,
-      "updatedAt": 1759172804926,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 711656751,
+      "createdAt": 1759174314999,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 3,
+      "zIndex": 14,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -322,23 +322,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "yTrOOmpd_rlxOQhF-rZHc",
+      "id": "rbUs2t9HyG1LhsYMTa6t-",
       "position": {
-        "x": 559.962633421698,
-        "y": 1071.8578429912795
+        "x": -4077.5896937574576,
+        "y": -3985.219800067633
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 349,
-      "versionNonce": 1331201750,
-      "createdAt": 1759168072581,
-      "updatedAt": 1759172804926,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1234594113,
+      "createdAt": 1759174315000,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 4,
+      "zIndex": 15,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -360,23 +360,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "1rcmTyJMI77SCYruaXT6g",
+      "id": "SiiS3T3knVcmT3M20s6k6",
       "position": {
-        "x": 309.17845165256927,
-        "y": 1330.2546477052617
+        "x": -4299.608123987859,
+        "y": -3717.3463663536504
       },
       "size": {
-        "width": 4839.579181722695,
-        "height": 3.0636940137376314
+        "width": 4981.158630183967,
+        "height": 4.547473508864641e-13
       },
-      "version": 832,
-      "versionNonce": 145067630,
-      "createdAt": 1759168101514,
-      "updatedAt": 1759173195391,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 273712975,
+      "createdAt": 1759174315001,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 5,
+      "zIndex": 16,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -399,45 +399,45 @@
         "start": {
           "snappedToEdge": false,
           "position": {
-            "x": 309.17845165256927,
-            "y": 1333.3183417189994
+            "x": -4299.608123987859,
+            "y": -3717.34636635365
           },
           "absolutePosition": {
-            "x": 309.17845165256927,
-            "y": 1333.3183417189994
+            "x": -4299.608123987859,
+            "y": -3717.34636635365
           }
         },
         "end": {
           "snappedToEdge": false,
           "position": {
-            "x": 5148.757633375264,
-            "y": 1330.2546477052617
+            "x": 681.5505061961085,
+            "y": -3717.3463663536504
           },
           "absolutePosition": {
-            "x": 5148.757633375264,
-            "y": 1330.2546477052617
+            "x": 681.5505061961085,
+            "y": -3717.3463663536504
           }
         }
       }
     },
     {
-      "id": "ypcHjJ7DZOzn1c3Np13iD",
+      "id": "uXoiNtdEn2EsjOGfHyVNK",
       "position": {
-        "x": 5036.144867430787,
-        "y": 1364.055597639313
+        "x": 568.9377402516311,
+        "y": -3683.5454164195994
       },
       "size": {
         "width": 95,
         "height": 90
       },
-      "version": 91,
-      "versionNonce": 1790086102,
-      "createdAt": 1759168111889,
-      "updatedAt": 1759173171042,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1079613729,
+      "createdAt": 1759174315001,
+      "updatedAt": 1759175155817,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 6,
+      "zIndex": 17,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -455,23 +455,23 @@
       }
     },
     {
-      "id": "YIBr5qKo72qCQ-gTnkS3v",
+      "id": "ATYrYZpkwAthNcAwcj7ia",
       "position": {
-        "x": 629.962632642357,
-        "y": 1383.3681183597112
+        "x": -3753.1068015367987,
+        "y": -3637.5454156992014
       },
       "size": {
         "width": 1888,
         "height": 362
       },
-      "version": 328,
-      "versionNonce": 1749246346,
-      "createdAt": 1759168144890,
-      "updatedAt": 1759173182798,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1048626543,
+      "createdAt": 1759174315002,
+      "updatedAt": 1759175155839,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 7,
+      "zIndex": 18,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -489,23 +489,23 @@
       }
     },
     {
-      "id": "yMgDvvyWWSL5cugB5mRAY",
+      "id": "6N384TBIknafz851wWQHu",
       "position": {
-        "x": 774.3664417135349,
-        "y": 977.0897824870211
+        "x": -3872.1878554656205,
+        "y": -4110.376274571891
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 174,
-      "versionNonce": 932002838,
-      "createdAt": 1759169896597,
-      "updatedAt": 1759172804926,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 2062273793,
+      "createdAt": 1759174315005,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 8,
+      "zIndex": 19,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -513,7 +513,7 @@
       "isDTO": true,
       "type": "sticker",
       "schema": 2,
-      "text": "<p>Аккаунт заблокирован</p>",
+      "text": "<p>Пользователь заблокирован</p>",
       "style": {
         "tc": "#3A3A3A",
         "tff": "Neue Haas Unica, Segoe UI Emoji",
@@ -527,23 +527,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "Xb4xVJHeUhRiApimA3KDU",
+      "id": "vP64tz7CXJ_8G-LWF1OHp",
       "position": {
-        "x": 774.3664417124062,
-        "y": 1141.8578431486285
+        "x": -3872.1878554667487,
+        "y": -3928.3881129102833
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 205,
-      "versionNonce": 1433958794,
-      "createdAt": 1759169907287,
-      "updatedAt": 1759172804926,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1413758863,
+      "createdAt": 1759174315006,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 9,
+      "zIndex": 20,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -551,7 +551,7 @@
       "isDTO": true,
       "type": "sticker",
       "schema": 2,
-      "text": "<p>Аккаунт разблокирован</p>",
+      "text": "<p>Пользователь  разблокирован</p>",
       "style": {
         "tc": "#3A3A3A",
         "tff": "Neue Haas Unica, Segoe UI Emoji",
@@ -565,23 +565,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "MWTH_RtiQjMlWZkzqJcB_",
+      "id": "mX9eQ7sbvonAaWsjQAKCk",
       "position": {
-        "x": 1588.1003258906576,
-        "y": 948.8076773672032
+        "x": -2879.106801288498,
+        "y": -4098.79333669171
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 399,
-      "versionNonce": 1789343766,
-      "createdAt": 1759169972824,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 818709729,
+      "createdAt": 1759174315007,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 10,
+      "zIndex": 21,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -603,23 +603,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "IUqlyrLbYbHNg_a4vKUfK",
+      "id": "JMmvZ10p3WtgCQ9ETIZMm",
       "position": {
-        "x": 1762.5066851232746,
-        "y": 959.7023261597247
+        "x": -2704.700442055881,
+        "y": -4087.8986878991877
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 446,
-      "versionNonce": 1620606026,
-      "createdAt": 1759169984056,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1943238063,
+      "createdAt": 1759174315008,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 11,
+      "zIndex": 22,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -641,23 +641,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "8sDDFI6eadA4fVzSatIyb",
+      "id": "lJyP6ULJYWtLzNmkuNfPP",
       "position": {
-        "x": 1964.2243308351703,
-        "y": 959.7023258324349
+        "x": -2502.9827963439852,
+        "y": -4087.8986882264776
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 573,
-      "versionNonce": 1069329046,
-      "createdAt": 1759169993967,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 2106278081,
+      "createdAt": 1759174315009,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 12,
+      "zIndex": 23,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -679,23 +679,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "HswQQzf7Khs0Oqd2CTHHs",
+      "id": "83GJpZfqWuhbJEQrAObKS",
       "position": {
-        "x": 2265.892930416147,
-        "y": 804.8228887307356
+        "x": -2201.3141967630086,
+        "y": -4242.778125328176
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 256,
-      "versionNonce": 274055370,
-      "createdAt": 1759170030599,
-      "updatedAt": 1759173212165,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1683417039,
+      "createdAt": 1759174315010,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 13,
+      "zIndex": 24,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -717,23 +717,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "wBYVb8A1Xk2HPGHVuaTsC",
+      "id": "k7Ibn9DE-l1PCD72zbnpe",
       "position": {
-        "x": 2265.89292981705,
-        "y": 978.0033790510065
+        "x": -2201.3141973621055,
+        "y": -4069.597635007906
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 140,
-      "versionNonce": 2016471958,
-      "createdAt": 1759170058895,
-      "updatedAt": 1759173212165,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1590132897,
+      "createdAt": 1759174315010,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 14,
+      "zIndex": 25,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -755,23 +755,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "40kf3HgMrQEOH_thdV9ZU",
+      "id": "_ke5E4125EWDscu5S8x0y",
       "position": {
-        "x": 2265.8929295944013,
-        "y": 1146.782647152706
+        "x": -2201.3141975847543,
+        "y": -3900.8183669062064
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 165,
-      "versionNonce": 962630154,
-      "createdAt": 1759170072715,
-      "updatedAt": 1759173212165,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1944524271,
+      "createdAt": 1759174315011,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 15,
+      "zIndex": 26,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -793,23 +793,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "OGeuw4DgwefHzvB-NStOw",
+      "id": "xktqWfM8tgV9eRgdJRY-n",
       "position": {
-        "x": 2549.5925950596356,
-        "y": 1053.4339603461362
+        "x": -1917.61453211952,
+        "y": -3994.167053712776
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 361,
-      "versionNonce": 94727178,
-      "createdAt": 1759170136860,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1915798657,
+      "createdAt": 1759174315012,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 17,
+      "zIndex": 27,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -831,23 +831,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "k7aciaIioTkEv5fGRezUi",
+      "id": "tUPiE2qAgGZbZgB-TU9X5",
       "position": {
-        "x": 2732.008848829967,
-        "y": 930.4862602251864
+        "x": -1735.1982783491885,
+        "y": -4117.114753833726
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 341,
-      "versionNonce": 538223946,
-      "createdAt": 1759170142924,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 428638223,
+      "createdAt": 1759174315013,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 18,
+      "zIndex": 28,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -869,23 +869,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "MW91LUmBuduq_Ny-3UXu4",
+      "id": "KmpOyxIRTIfzmvUTxL3d4",
       "position": {
-        "x": 2945.989615243783,
-        "y": 1068.292214953382
+        "x": -1521.2175119353724,
+        "y": -3979.3087991055304
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 259,
-      "versionNonce": 1928288970,
-      "createdAt": 1759170178036,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1938197601,
+      "createdAt": 1759174315013,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 20,
+      "zIndex": 29,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -907,23 +907,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "MB9Kr7nAebHN2j9am1gjX",
+      "id": "Ozgl8JX0D2XjDkNAyV4VO",
       "position": {
-        "x": 3132.376478713092,
-        "y": 1068.292215163805
+        "x": -1334.8306484660634,
+        "y": -3979.3087988951074
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 189,
-      "versionNonce": 582922646,
-      "createdAt": 1759170198759,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1463789103,
+      "createdAt": 1759174315014,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 22,
+      "zIndex": 30,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -945,23 +945,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "ZitqtmIlTfBN7y0qMp17Y",
+      "id": "9h7FUAgyAeGMEM88K4VX4",
       "position": {
-        "x": 3321.5369093706267,
-        "y": 986.4588484034406
+        "x": -1145.6702178085288,
+        "y": -4061.1421656554717
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 243,
-      "versionNonce": 1731635670,
-      "createdAt": 1759170284693,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 2056804417,
+      "createdAt": 1759174315015,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 23,
+      "zIndex": 31,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -983,23 +983,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "dMw9WkbjkdJry7EdNZdhk",
+      "id": "mDGCQC7Saazhekiooz7mf",
       "position": {
-        "x": 3321.53690889022,
-        "y": 817.577671578752
+        "x": -1145.6702182889358,
+        "y": -4230.023342480161
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 250,
-      "versionNonce": 819105738,
-      "createdAt": 1759170298625,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1541998671,
+      "createdAt": 1759174315016,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 24,
+      "zIndex": 32,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1021,23 +1021,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "qgshztfu5QvkNpAD6eJsQ",
+      "id": "h6yjskcGeLMmY3QfSsKaT",
       "position": {
-        "x": 3490.6252256413018,
-        "y": 908.0033785816986
+        "x": -976.5819015378538,
+        "y": -4139.597635477214
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 262,
-      "versionNonce": 1279395466,
-      "createdAt": 1759170381328,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 2034608161,
+      "createdAt": 1759174315017,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 25,
+      "zIndex": 33,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1059,23 +1059,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "1Y0StA3DB_6eELF-oxRO2",
+      "id": "gs9gA3sDRXd8jfvC00eDc",
       "position": {
-        "x": 3659.7135430077797,
-        "y": 911.2444071053643
+        "x": -807.4935841713759,
+        "y": -4136.356606953548
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 223,
-      "versionNonce": 363790102,
-      "createdAt": 1759170394055,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1700865647,
+      "createdAt": 1759174315017,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 26,
+      "zIndex": 34,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1097,23 +1097,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "aEUIB3gwobi5gY58cICQZ",
+      "id": "Z3AjbJpB9jRmTwGTLmmSu",
       "position": {
-        "x": 3490.625226465463,
-        "y": 1123.4339603829035
+        "x": -976.5819007136924,
+        "y": -3924.167053676009
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 197,
-      "versionNonce": 1720545674,
-      "createdAt": 1759170494980,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 2038299649,
+      "createdAt": 1759174315018,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 27,
+      "zIndex": 35,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1135,23 +1135,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "VJMpxwSvmWZk5WYZencqW",
+      "id": "4PBK_WheFTxD5bO0n1IJO",
       "position": {
-        "x": 3895.1782185423153,
-        "y": 1001.4701286119436
+        "x": -572.0289086368402,
+        "y": -4046.130885446969
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 304,
-      "versionNonce": 1615195414,
-      "createdAt": 1759170533602,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1651540111,
+      "createdAt": 1759174315019,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 28,
+      "zIndex": 36,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1173,23 +1173,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "2veBWMYUc219WkRWiGmjA",
+      "id": "7mWLui5ATePNPqFik8r7Y",
       "position": {
-        "x": 4062.2782375139573,
-        "y": 910.9001553753285
+        "x": -404.9288896651983,
+        "y": -4136.700858683584
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 362,
-      "versionNonce": 175364694,
-      "createdAt": 1759170548196,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 457233377,
+      "createdAt": 1759174315020,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 29,
+      "zIndex": 37,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1211,23 +1211,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "yW8lxlmL-glTPjmnu_APV",
+      "id": "sfP6TPZAUa6W-1ZcdfqpU",
       "position": {
-        "x": 4062.2782378083225,
-        "y": 1084.9957708874026
+        "x": -404.9288893708331,
+        "y": -3962.6052431715098
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 352,
-      "versionNonce": 556504906,
-      "createdAt": 1759170562008,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1422890671,
+      "createdAt": 1759174315020,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 30,
+      "zIndex": 38,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1249,23 +1249,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "DIrca8AI0rbSKt0balA85",
+      "id": "_p1hB38EbnrmgWd4h4_zz",
       "position": {
-        "x": 4229.378257418397,
-        "y": 997.9479631656692
+        "x": -237.8288697607586,
+        "y": -4049.6530508932433
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 462,
-      "versionNonce": 1796087306,
-      "createdAt": 1759170594355,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1386065857,
+      "createdAt": 1759174315021,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 31,
+      "zIndex": 39,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1287,23 +1287,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "OmQrLh4IeSMjo1jjYoch9",
+      "id": "DUjDvBChJ_HTr8n8CkqqT",
       "position": {
-        "x": 4396.478276082376,
-        "y": 898.1477432153687
+        "x": -70.72885109677918,
+        "y": -4149.453270843544
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 529,
-      "versionNonce": 720510870,
-      "createdAt": 1759170615672,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1931929807,
+      "createdAt": 1759174315022,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 32,
+      "zIndex": 40,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1325,23 +1325,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "5fhlaGcbTgEZNUjvKLbm8",
+      "id": "dT1vTBWPOZ68vRJ40jwMx",
       "position": {
-        "x": 4671.561850514215,
-        "y": 872.902613772685
+        "x": 204.35472333505913,
+        "y": -4174.698400286227
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 370,
-      "versionNonce": 1597537942,
-      "createdAt": 1759170706186,
-      "updatedAt": 1759173161381,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1706299297,
+      "createdAt": 1759174315023,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 33,
+      "zIndex": 41,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1363,23 +1363,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "AZxgPS61hqhjQTjDr3XVs",
+      "id": "zNsNYqU5EHSA9hs_3PLZn",
       "position": {
-        "x": 4875.3410582937,
-        "y": 968.1094462317584
+        "x": 408.1339311145448,
+        "y": -4079.491567827154
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 646,
-      "versionNonce": 763682250,
-      "createdAt": 1759170718449,
-      "updatedAt": 1759173161381,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 185530095,
+      "createdAt": 1759174315024,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 34,
+      "zIndex": 42,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1401,23 +1401,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "-aCh0rBAAcKAW8Lmutm6z",
+      "id": "Hu4EXwpGun9V3qIOteZlj",
       "position": {
-        "x": 4671.561851007483,
-        "y": 1053.0514113852314
+        "x": 204.35472382832722,
+        "y": -3994.549602673681
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 335,
-      "versionNonce": 1836011274,
-      "createdAt": 1759170754487,
-      "updatedAt": 1759173161364,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 716403585,
+      "createdAt": 1759174315024,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 35,
+      "zIndex": 43,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1439,23 +1439,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "euVm1h6gHrEB-5n2UxGLr",
+      "id": "ds1ccDmmGUGb6GH-WPoGG",
       "position": {
-        "x": 3321.5369086538585,
-        "y": 1155.3400231551814
+        "x": -1145.670218525297,
+        "y": -3892.260990903731
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 128,
-      "versionNonce": 2053115606,
-      "createdAt": 1759171297337,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 588267791,
+      "createdAt": 1759174315025,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 37,
+      "zIndex": 44,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1477,23 +1477,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "Fv8X7NP9XqFHLug4WeLPk",
+      "id": "9QYeZDrfd2V9DDHVza1Ra",
       "position": {
-        "x": 1762.5066852484292,
-        "y": 1125.2553768648304
+        "x": -2704.7004419307264,
+        "y": -3922.345637194082
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 345,
-      "versionNonce": 1886635350,
-      "createdAt": 1759171999858,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 98261857,
+      "createdAt": 1759174315026,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 43,
+      "zIndex": 45,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1515,23 +1515,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "-YKrVuz12bQKxFLzm3rSS",
+      "id": "pVNwRs23YIjt-udRGakGP",
       "position": {
-        "x": 4396.478275959113,
-        "y": 1071.4701289037093
+        "x": -70.728851220043,
+        "y": -3976.130885155203
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 206,
-      "versionNonce": 1282526410,
-      "createdAt": 1759172096622,
-      "updatedAt": 1759173159298,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1554204463,
+      "createdAt": 1759174315027,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 44,
+      "zIndex": 46,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1553,23 +1553,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "FWs8vVDvovfFXX8rEznl3",
+      "id": "yHFO5rq6ScQd_TgadWS89",
       "position": {
-        "x": 2732.0088494059055,
-        "y": 1113.41679891887
+        "x": -1735.19827777325,
+        "y": -3934.1842151400424
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 137,
-      "versionNonce": 350923862,
-      "createdAt": 1759172150013,
-      "updatedAt": 1759172464172,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 662390593,
+      "createdAt": 1759174315028,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 45,
+      "zIndex": 47,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1591,23 +1591,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "2cKgsVU0QGtmIaHqCml-A",
+      "id": "vs6qTISwi0yYiutUNk-Cf",
       "position": {
-        "x": 1762.5066852984428,
-        "y": 794.1492752413392
+        "x": -2704.700441880713,
+        "y": -4253.451738817574
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 391,
-      "versionNonce": 1435919114,
-      "createdAt": 1759172351927,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 372279631,
+      "createdAt": 1759174315028,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 46,
+      "zIndex": 48,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1629,23 +1629,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "3MHEa4IU_blh8Q3FKHxld",
+      "id": "8ggSnDIk6J-uWUaFXNGLh",
       "position": {
-        "x": 1096.3308862356166,
-        "y": 959.7023258840621
+        "x": -3370.876240943539,
+        "y": -4087.89868817485
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 504,
-      "versionNonce": 665416138,
-      "createdAt": 1759172481171,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 166901537,
+      "createdAt": 1759174315029,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 47,
+      "zIndex": 49,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1667,23 +1667,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "PIuDUePoPyXldZb47BdLq",
+      "id": "2gcJNT3JinZtMrSGg_31b",
       "position": {
-        "x": 1342.215606253963,
-        "y": 839.8247964796612
+        "x": -3124.9915209251926,
+        "y": -4207.776217579251
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 263,
-      "versionNonce": 1312079242,
-      "createdAt": 1759172548534,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 1292928879,
+      "createdAt": 1759174315030,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 48,
+      "zIndex": 50,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1705,23 +1705,23 @@
       "isAuthorVisible": false
     },
     {
-      "id": "rdWHynP47KrSEDxsUGFVD",
+      "id": "q2pW4i6z7v0LV4WSa2xIY",
       "position": {
-        "x": 1342.2156060025,
-        "y": 1018.8076774693812
+        "x": -3124.9915211766556,
+        "y": -4028.793336589531
       },
       "size": {
         "width": 140,
         "height": 140
       },
-      "version": 231,
-      "versionNonce": 2097283798,
-      "createdAt": 1759172636198,
-      "updatedAt": 1759173205248,
-      "createdBy": "6d12cff9-7523-4ab0-839d-88f1f93efa5f",
+      "version": 1,
+      "versionNonce": 800140033,
+      "createdAt": 1759174315030,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
       "nameCreatedBy": " ",
       "alpha": 100,
-      "zIndex": 49,
+      "zIndex": 51,
       "rotation": 0,
       "groupIds": [],
       "isLocked": false,
@@ -1734,6 +1734,44 @@
         "tc": "#3A3A3A",
         "tff": "Neue Haas Unica, Segoe UI Emoji",
         "tfs": 31,
+        "ta": "m",
+        "tva": "m",
+        "fc": "#FFD08B",
+        "fs": "s",
+        "tfsa": true
+      },
+      "isAuthorVisible": false
+    },
+    {
+      "id": "zQqpYcsAXm9PmD6libMb9",
+      "position": {
+        "x": -3683.3465587356714,
+        "y": -3998.3881127855834
+      },
+      "size": {
+        "width": 140,
+        "height": 140
+      },
+      "version": 1,
+      "versionNonce": 1066123663,
+      "createdAt": 1759174315031,
+      "updatedAt": 1759174315067,
+      "createdBy": "d3dc64c7-d50a-43a1-8af5-e622aa58b54b",
+      "nameCreatedBy": " ",
+      "alpha": 100,
+      "zIndex": 52,
+      "rotation": 0,
+      "groupIds": [],
+      "isLocked": false,
+      "isDeleted": false,
+      "isDTO": true,
+      "type": "sticker",
+      "schema": 2,
+      "text": "<p>Профиль пользователя обновлён</p>",
+      "style": {
+        "tc": "#3A3A3A",
+        "tff": "Neue Haas Unica, Segoe UI Emoji",
+        "tfs": 19,
         "ta": "m",
         "tva": "m",
         "fc": "#FFD08B",
