@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" version="1.1" viewBox="0 322 1170 612" width="2340" height="1224">
+  <ns0:defs>
+    <ns0:style>@font-face {  font-family: "T-Bank Sans";  font-display: swap;  font-style: normal;  font-weight: normal;  src: url("https://unidraw.io/app/persistent/fonts/tbank-sans/tbank-sans.woff2") format("woff2");}@font-face {  font-family: "T-Bank Sans";  font-display: swap;  font-style: normal;  font-weight: bold;  src: url("https://unidraw.io/app/persistent/fonts/tbank-sans/tbank-sans-medium.woff2") format("woff2");}@font-face {  font-family: "T-Bank Sans";  font-display: swap;  font-style: normal;  font-weight: bold;  src: url("https://unidraw.io/app/persistent/fonts/tbank-sans/tbank-sans-bold.woff2") format("woff2");}@font-face {  font-family: "Caveat";  font-weight: normal;  src: url("https://unidraw.io/app/persistent/fonts/caveat/caveat-regular.ttf") format("truetype");  font-display: swap;}@font-face {  font-family: "Fira Mono";  font-weight: normal;  src: url("https://unidraw.io/app/persistent/fonts/fira-mono/fira-mono-regular.ttf") format("truetype");  font-display: swap;}@font-face {  font-family: "Fira Mono";  font-weight: bold;  src: url("https://unidraw.io/app/persistent/fonts/fira-mono/fira-mono-medium.ttf") format("truetype");  font-display: swap;}@font-face {  font-family: "Fira Mono";  font-weight: bold;  src: url("https://unidraw.io/app/persistent/fonts/fira-mono/fira-mono-bold.ttf") format("truetype");  font-display: swap;}@font-face {  font-family:"Neue Haas Unica";  font-style: normal;  font-weight: 400;  font-display: swap;  src: url('https://unidraw.io/app/persistent/fonts/neue-haas-unica/NeueHaasUnicaW1G-Regular.woff2') format('woff2');}@font-face {  font-family: "Neue Haas Unica";  font-style: normal;  font-weight: 500;  font-display: swap;  src: url('https://unidraw.io/app/persistent/fonts/neue-haas-unica/NeueHaasUnicaW1G-Medium.woff2') format('woff2');}@font-face {  font-family: "Neue Haas Unica";  font-style: normal;  font-weight: 600;  font-display: swap;  src: url('https://unidraw.io/app/persistent/fonts/neue-haas-unica/NeueHaasUnicaW1G-Bold.woff2') format('woff2');}@font-face {  font-family: "EB Garamond";  src: url("https://unidraw.io/app/persistent/fonts/eb-garamond/eb-garamond-regular.ttf")  format("truetype");  font-display: swap;}@font-face {  font-family: "Roboto";  font-style: italic;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-italic.woff") format("woff");}@font-face {  font-family: "Roboto";  font-style: normal;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-regular.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-regular.woff") format("woff");}@font-face {  font-family: "Roboto";  font-style: italic;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-700italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-700italic.woff") format("woff");}@font-face {  font-family: "Roboto";  font-style: normal;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-700.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/Roboto/roboto-v16-latin_cyrillic_latin-ext-700.woff") format("woff");}@font-face {  font-family: "IBM Plex Mono";  font-style: italic;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-italic.woff") format("woff");}@font-face {  font-family: "IBM Plex Mono";  font-style: normal;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-regular.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-regular.woff") format("woff");}@font-face {  font-family: "IBM Plex Mono";  font-style: normal;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-700.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-700.woff") format("woff");}@font-face {  font-family: "IBM Plex Mono";  font-style: italic;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-700italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexMono/ibm-plex-mono-v3-latin-ext_latin_cyrillic-700italic.woff") format("woff");}@font-face {  font-family: "IBM Plex Sans";  font-style: normal;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-regular.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-regular.woff") format("woff");}@font-face {  font-family: "IBM Plex Sans";  font-style: italic;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-italic.woff") format("woff");}@font-face {  font-family: "IBM Plex Sans";  font-style: normal;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-700.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-700.woff") format("woff");}@font-face {  font-family: "IBM Plex Sans";  font-style: italic;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-700italic.woff2") format("woff2"),    url("https://unidraw.io/app/persistent/fonts/PlexSans/ibm-plex-sans-v3-latin-ext_latin_cyrillic-700italic.woff") format("woff");}@font-face {  font-family: "Inter";  src: url("https://unidraw.io/app/persistent/fonts/inter/inter-regular.ttf") format("truetype");  font-display: swap;}@font-face {  font-family: "Dela Gothic One";  font-style: normal;  font-weight: normal;  font-display: swap;  src: url('https://unidraw.io/app/persistent/fonts/DelaGothicOne/dela-gothic-one-v17-cyrillic_greek_japanese_latin_latin-ext_vietnamese-regular.woff2') format('woff2');}@font-face {  font-family: "Oswald";  font-display: swap;  font-style: normal;  font-weight: 300;  src: url("https://unidraw.io/app/persistent/fonts/Oswald/oswald-v53-cyrillic_cyrillic-ext_latin_latin-ext_vietnamese-300.woff2") format("woff2");}@font-face {  font-family: "Oswald";  font-display: swap;  font-style: normal;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/Oswald/oswald-v53-cyrillic_cyrillic-ext_latin_latin-ext_vietnamese-regular.woff2") format("woff2");}@font-face {  font-family: "Oswald";  font-display: swap;  font-style: normal;  font-weight: 600;  src: url("https://unidraw.io/app/persistent/fonts/Oswald/oswald-v53-cyrillic_cyrillic-ext_latin_latin-ext_vietnamese-600.woff2") format("woff2");}@font-face {  font-family: "Oswald";  font-display: swap;  font-style: normal;  font-weight: 700;  src: url("https://unidraw.io/app/persistent/fonts/Oswald/oswald-v53-cyrillic_cyrillic-ext_latin_latin-ext_vietnamese-700.woff2") format("woff2");}@font-face {  font-family: "Great Vibes";  font-display: swap;  font-style: normal;  font-weight: 400;  src: url("https://unidraw.io/app/persistent/fonts/GreatVibes/great-vibes-v19-cyrillic_cyrillic-ext_greek-ext_latin_latin-ext_vietnamese-regular.woff2") format("woff2");}</ns0:style>
+  </ns0:defs>
+  <ns0:rect x="0" y="0" width="1170" height="1378.1946850990403" fill="#ffffff" />
+  <ns0:g stroke-linecap="round" transform="translate(0.7260053976183372 351.94676373932907) rotate(0 569.5 276)">
+    <ns0:path d="M-0.4 0.38 L1139.1 -1.62 L1140.22 550.7 L-0.93 553.13" stroke="none" stroke-width="0" fill="#ffffff" />
+    <ns0:path d="M-0.2 0.66 C374.83 1.45, 748.48 1.3, 1139.26 0.45 M-0.1 -0.27 C243.86 2.61, 487.46 2.27, 1139.12 -0.25 M1139.79 -0.18 C1138.37 192.85, 1138.56 385.8, 1138.88 552.64 M1138.7 -0.36 C1141.33 209.67, 1141.38 418.48, 1139.34 552.23 M1138.74 552.7 C702.1 553.04, 265.35 552.61, 0.36 552.59 M1138.79 551.71 C850.21 548.42, 560.59 548.69, -0.36 551.83 M0.07 551.47 C1.9 408.78, 1.18 266.83, -0.67 -0.19 M0.3 551.75 C-1.85 407.89, -1.89 263.99, -0.34 0.06" stroke="#CCCCCC" stroke-width="2" fill="none" />
+  </ns0:g>
+  <ns0:g transform="translate(0.7260053976183372 351.94676373932907) rotate(0 569.5 276)">
+    <ns0:text x="4" y="-7" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="13px" fill="#CCCCCC" text-anchor="start" style="white-space: pre;" direction="ltr">Каталог игр</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(565.5013226993606 544.9467641065321) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(565.5013226993606 544.9467641065321) rotate(0 70 70)">
+    <ns0:text x="70" y="49.83333333333333" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="25px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Игра </ns0:text>
+    <ns0:text x="70" y="78.16666666666666" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="25px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">добавлена</ns0:text>
+    <ns0:text x="70" y="106.5" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="25px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr"> в каталог</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(739.9076819319775 555.8414128990539) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(739.9076819319775 555.8414128990539) rotate(0 70 70)">
+    <ns0:text x="70" y="55.30555555555556" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="19px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Информация </ns0:text>
+    <ns0:text x="70" y="76.69444444444444" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="19px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">об игре </ns0:text>
+    <ns0:text x="70" y="98.08333333333334" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="19px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">обновлена</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(941.6253276438733 555.8414125717641) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(941.6253276438733 555.8414125717641) rotate(0 70 70)">
+    <ns0:text x="70" y="41.45833333333333" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Игра </ns0:text>
+    <ns0:text x="70" y="65" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">помечена </ns0:text>
+    <ns0:text x="70" y="88.54166666666666" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">как </ns0:text>
+    <ns0:text x="70" y="112.08333333333334" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">недоступная</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(739.9076820571322 721.3944636041597) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(739.9076820571322 721.3944636041597) rotate(0 70 70)">
+    <ns0:text x="70" y="53.05555555555556" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Фотографии</ns0:text>
+    <ns0:text x="70" y="76.94444444444444" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr"> игры </ns0:text>
+    <ns0:text x="70" y="100.83333333333334" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="21px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">загружены</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(739.9076821071458 390.288361980668) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(739.9076821071458 390.288361980668) rotate(0 70 70)">
+    <ns0:text x="70" y="28.499999999999993" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="22px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Количество</ns0:text>
+    <ns0:text x="70" y="52.83333333333333" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="22px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr"> доступных </ns0:text>
+    <ns0:text x="70" y="77.16666666666666" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="22px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">к аренде </ns0:text>
+    <ns0:text x="70" y="101.5" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="22px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">игр </ns0:text>
+    <ns0:text x="70" y="125.83333333333334" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="22px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">обновлено</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(73.7318830443196 555.8414126233915) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(73.7318830443196 555.8414126233915) rotate(0 70 70)">
+    <ns0:text x="70" y="66" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="18px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Игры </ns0:text>
+    <ns0:text x="70" y="86.83333333333334" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="18px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">отсорированы</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(319.61660306266594 435.9638832189903) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(319.61660306266594 435.9638832189903) rotate(0 70 70)">
+    <ns0:text x="70" y="63" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="31px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Игра не </ns0:text>
+    <ns0:text x="70" y="98" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="31px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">найдена</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(319.61660281120294 614.9467642087106) rotate(0 70 70)">
+    <ns0:defs>
+      <ns0:filter x="-100%" y="-100%" width="300%" height="300%" id="shadow">
+        <ns0:feDropShadow dx="8" dy="8" stdDeviation="5" flood-color="rgba(134, 134, 134, 0.32)" />
+      </ns0:filter>
+    </ns0:defs>
+    <ns0:rect x="0" y="0" width="140" height="140" style="fill: #FFD08B; filter:url(#shadow);" />
+  </ns0:g>
+  <ns0:g transform="translate(319.61660281120294 614.9467642087106) rotate(0 70 70)">
+    <ns0:text x="70" y="63" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="31px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">Игра </ns0:text>
+    <ns0:text x="70" y="98" font-family="Neue Haas Unica, Segoe UI Emoji" font-size="31px" fill="#3A3A3A" text-anchor="middle" style="white-space: pre;" direction="ltr">найдена</ns0:text>
+  </ns0:g>
+</ns0:svg>
