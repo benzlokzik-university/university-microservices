@@ -1,0 +1,233 @@
+services:
+  # RabbitMQ for async event-driven communication
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # User Account Database
+  user-account-db:
+    image: postgres:15-alpine
+    container_name: user-account-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user_account
+    ports:
+      - "5433:5432"
+    volumes:
+      - user-account-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Game Catalog Database
+  game-catalog-db:
+    image: postgres:15-alpine
+    container_name: game-catalog-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: game_catalog
+    ports:
+      - "5434:5432"
+    volumes:
+      - game-catalog-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Rent Database
+  rent-db:
+    image: postgres:15-alpine
+    container_name: rent-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: rent
+    ports:
+      - "5435:5432"
+    volumes:
+      - rent-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # User Account Service
+  user-account:
+    build:
+      context: ./code/services/user-account
+      dockerfile: Dockerfile
+    container_name: user-account-service
+    ports:
+      - "8001:8001"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@user-account-db:5432/user_account
+      SECRET_KEY: your-secret-key-change-in-production
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+    depends_on:
+      user-account-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Game Catalog Service
+  game-catalog:
+    build:
+      context: ./code/services/game-catalog
+      dockerfile: Dockerfile
+    container_name: game-catalog-service
+    ports:
+      - "8002:8002"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@game-catalog-db:5432/game_catalog
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+    depends_on:
+      game-catalog-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Booking Service
+  booking:
+    build:
+      context: ./code/services/booking
+      dockerfile: Dockerfile
+    container_name: booking-service
+    ports:
+      - "8003:8003"
+    environment:
+      USER_ACCOUNT_SERVICE_URL: http://user-account:8001
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+    depends_on:
+      user-account:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Payment Service
+  payment:
+    build:
+      context: ./code/services/payment
+      dockerfile: Dockerfile
+    container_name: payment-service
+    ports:
+      - "8004:8004"
+      - "50051:50051"
+    environment:
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Rent Service
+  rent:
+    build:
+      context: ./code/services/rent
+      dockerfile: Dockerfile
+    container_name: rent-service
+    ports:
+      - "8005:8005"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@rent-db:5432/rent
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+      PAYMENT_SERVICE_GRPC_URL: payment:50051
+      BOOKING_SERVICE_URL: http://booking:8003
+      GAME_CATALOG_SERVICE_URL: http://game-catalog:8002
+      USER_ACCOUNT_SERVICE_URL: http://user-account:8001
+    depends_on:
+      rent-db:
+        condition: service_healthy
+      payment:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Rating Service
+  rating:
+    build:
+      context: ./code/services/rating
+      dockerfile: Dockerfile
+    container_name: rating-service
+    ports:
+      - "8006:8006"
+    environment:
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+      GAME_CATALOG_SERVICE_URL: http://game-catalog:8002
+    depends_on:
+      game-catalog:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8006/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # API Gateway
+  gateway:
+    build:
+      context: ./code/services/gateway
+      dockerfile: Dockerfile
+    container_name: gateway-service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - user-account
+      - game-catalog
+      - booking
+      - payment
+      - rent
+      - rating
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  user-account-db-data:
+  game-catalog-db-data:
+  rent-db-data:
