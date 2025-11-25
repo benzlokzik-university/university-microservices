@@ -70,9 +70,9 @@ async def register_user(request: RegisterUserRequest, db: Session = Depends(get_
     if existing_user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="User with this email already exists"
+            detail="User with this email already exists",
         )
-    
+
     # Create new user
     hashed_password = get_password_hash(request.password)
     db_user = User(
@@ -85,7 +85,7 @@ async def register_user(request: RegisterUserRequest, db: Session = Depends(get_
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    
+
     return UserResponse.model_validate(db_user)
 
 
@@ -101,31 +101,28 @@ async def authorize_user(request: AuthorizeUserRequest, db: Session = Depends(ge
     user = db.query(User).filter(User.email == request.email).first()
     if not user:
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password"
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
         )
-    
+
     # Check if user is blocked
     if user.is_blocked:
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="User account is blocked"
+            status_code=status.HTTP_403_FORBIDDEN, detail="User account is blocked"
         )
-    
+
     # Verify password
     if not verify_password(request.password, user.password_hash):
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password"
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
         )
-    
+
     # Create access token
     access_token = create_access_token(data={"sub": user.user_id})
-    
+
     return AuthResponse(
         access_token=access_token,
         token_type="bearer",
-        user=UserResponse.model_validate(user)
+        user=UserResponse.model_validate(user),
     )
 
 
@@ -140,8 +137,7 @@ async def get_user(user_id: str, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.user_id == user_id).first()
     if not user:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="User not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
         )
     return UserResponse.from_orm(user)
 
@@ -153,18 +149,15 @@ async def get_user(user_id: str, db: Session = Depends(get_db)):
     summary="Update user profile",
 )
 async def update_user_profile(
-    user_id: str,
-    request: UpdateUserProfileRequest,
-    db: Session = Depends(get_db)
+    user_id: str, request: UpdateUserProfileRequest, db: Session = Depends(get_db)
 ):
     """Update user profile information."""
     user = db.query(User).filter(User.user_id == user_id).first()
     if not user:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="User not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
         )
-    
+
     # Update fields if provided
     if request.first_name is not None:
         user.first_name = request.first_name
@@ -172,10 +165,10 @@ async def update_user_profile(
         user.last_name = request.last_name
     if request.phone is not None:
         user.phone = request.phone
-    
+
     db.commit()
     db.refresh(user)
-    
+
     return UserResponse.from_orm(user)
 
 
@@ -186,22 +179,19 @@ async def update_user_profile(
     summary="Block user account",
 )
 async def block_user(
-    user_id: str,
-    request: BlockUserRequest,
-    db: Session = Depends(get_db)
+    user_id: str, request: BlockUserRequest, db: Session = Depends(get_db)
 ):
     """Block a user account."""
     user = db.query(User).filter(User.user_id == user_id).first()
     if not user:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="User not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
         )
-    
+
     user.is_blocked = True
     db.commit()
     db.refresh(user)
-    
+
     return UserResponse.from_orm(user)
 
 
@@ -212,9 +202,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8001,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)

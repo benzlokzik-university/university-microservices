@@ -27,6 +27,7 @@ from models import User
 
 # Override the engine in database module
 import database
+
 database.engine = test_engine
 
 from main import app
@@ -44,7 +45,9 @@ def setup_test_db():
 @pytest.fixture(scope="function")
 def test_db():
     """Create a test database session."""
-    TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
+    TestingSessionLocal = sessionmaker(
+        autocommit=False, autoflush=False, bind=test_engine
+    )
     db = TestingSessionLocal()
     try:
         yield db
@@ -55,14 +58,14 @@ def test_db():
 @pytest.fixture(scope="function")
 def client(test_db):
     """Create a test client with test database."""
+
     def override_get_db():
         try:
             yield test_db
         finally:
             pass
-    
+
     app.dependency_overrides[get_db] = override_get_db
     with TestClient(app) as test_client:
         yield test_client
     app.dependency_overrides.clear()
-

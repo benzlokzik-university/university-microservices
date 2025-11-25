@@ -9,7 +9,7 @@ from fastapi import status
 
 class TestUserRegistration:
     """Integration tests for user registration."""
-    
+
     def test_register_user_success(self, client):
         """Test successful user registration."""
         response = client.post(
@@ -19,8 +19,8 @@ class TestUserRegistration:
                 "password": "securepassword123",
                 "first_name": "John",
                 "last_name": "Doe",
-                "phone": "+79991234567"
-            }
+                "phone": "+79991234567",
+            },
         )
         assert response.status_code == status.HTTP_201_CREATED
         data = response.json()
@@ -31,7 +31,7 @@ class TestUserRegistration:
         assert data["is_blocked"] is False
         assert "user_id" in data
         assert "created_at" in data
-    
+
     def test_register_duplicate_email(self, client):
         """Test registration with duplicate email fails."""
         # Register first user
@@ -41,10 +41,10 @@ class TestUserRegistration:
                 "email": "duplicate@example.com",
                 "password": "password123",
                 "first_name": "First",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
-        
+
         # Try to register with same email
         response = client.post(
             "/api/v1/users/register",
@@ -52,8 +52,8 @@ class TestUserRegistration:
                 "email": "duplicate@example.com",
                 "password": "password123",
                 "first_name": "Second",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert "already exists" in response.json()["detail"].lower()
@@ -61,7 +61,7 @@ class TestUserRegistration:
 
 class TestUserAuthorization:
     """Integration tests for user authorization."""
-    
+
     def test_authorize_success(self, client):
         """Test successful user authorization."""
         # Register user first
@@ -71,18 +71,15 @@ class TestUserAuthorization:
                 "email": "auth@example.com",
                 "password": "testpassword123",
                 "first_name": "Auth",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
         assert register_response.status_code == status.HTTP_201_CREATED
-        
+
         # Authorize
         response = client.post(
             "/api/v1/users/authorize",
-            json={
-                "email": "auth@example.com",
-                "password": "testpassword123"
-            }
+            json={"email": "auth@example.com", "password": "testpassword123"},
         )
         assert response.status_code == status.HTTP_200_OK
         data = response.json()
@@ -90,7 +87,7 @@ class TestUserAuthorization:
         assert data["token_type"] == "bearer"
         assert "user" in data
         assert data["user"]["email"] == "auth@example.com"
-    
+
     def test_authorize_invalid_password(self, client):
         """Test authorization with invalid password."""
         # Register user
@@ -100,20 +97,17 @@ class TestUserAuthorization:
                 "email": "invalid@example.com",
                 "password": "correctpassword",
                 "first_name": "Test",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
-        
+
         # Try to authorize with wrong password
         response = client.post(
             "/api/v1/users/authorize",
-            json={
-                "email": "invalid@example.com",
-                "password": "wrongpassword"
-            }
+            json={"email": "invalid@example.com", "password": "wrongpassword"},
         )
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
-    
+
     def test_authorize_blocked_user(self, client):
         """Test authorization fails for blocked user."""
         # Register user
@@ -123,31 +117,25 @@ class TestUserAuthorization:
                 "email": "blocked@example.com",
                 "password": "password123",
                 "first_name": "Blocked",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
         user_id = register_response.json()["user_id"]
-        
+
         # Block user
-        client.post(
-            f"/api/v1/users/{user_id}/block",
-            json={"reason": "Test blocking"}
-        )
-        
+        client.post(f"/api/v1/users/{user_id}/block", json={"reason": "Test blocking"})
+
         # Try to authorize
         response = client.post(
             "/api/v1/users/authorize",
-            json={
-                "email": "blocked@example.com",
-                "password": "password123"
-            }
+            json={"email": "blocked@example.com", "password": "password123"},
         )
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
 
 class TestUserProfile:
     """Integration tests for user profile management."""
-    
+
     def test_get_user(self, client):
         """Test getting user information."""
         # Register user
@@ -157,18 +145,18 @@ class TestUserProfile:
                 "email": "get@example.com",
                 "password": "password123",
                 "first_name": "Get",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
         user_id = register_response.json()["user_id"]
-        
+
         # Get user
         response = client.get(f"/api/v1/users/{user_id}")
         assert response.status_code == status.HTTP_200_OK
         data = response.json()
         assert data["user_id"] == user_id
         assert data["email"] == "get@example.com"
-    
+
     def test_update_profile(self, client):
         """Test updating user profile."""
         # Register user
@@ -178,26 +166,22 @@ class TestUserProfile:
                 "email": "update@example.com",
                 "password": "password123",
                 "first_name": "Old",
-                "last_name": "Name"
-            }
+                "last_name": "Name",
+            },
         )
         user_id = register_response.json()["user_id"]
-        
+
         # Update profile
         response = client.put(
             f"/api/v1/users/{user_id}/profile",
-            json={
-                "first_name": "New",
-                "last_name": "Name",
-                "phone": "+79999999999"
-            }
+            json={"first_name": "New", "last_name": "Name", "phone": "+79999999999"},
         )
         assert response.status_code == status.HTTP_200_OK
         data = response.json()
         assert data["first_name"] == "New"
         assert data["last_name"] == "Name"
         assert data["phone"] == "+79999999999"
-    
+
     def test_block_user(self, client):
         """Test blocking a user."""
         # Register user
@@ -207,21 +191,19 @@ class TestUserProfile:
                 "email": "block@example.com",
                 "password": "password123",
                 "first_name": "Block",
-                "last_name": "User"
-            }
+                "last_name": "User",
+            },
         )
         user_id = register_response.json()["user_id"]
-        
+
         # Block user
         response = client.post(
-            f"/api/v1/users/{user_id}/block",
-            json={"reason": "Violation of terms"}
+            f"/api/v1/users/{user_id}/block", json={"reason": "Violation of terms"}
         )
         assert response.status_code == status.HTTP_200_OK
         data = response.json()
         assert data["is_blocked"] is True
-        
+
         # Verify user is blocked
         get_response = client.get(f"/api/v1/users/{user_id}")
         assert get_response.json()["is_blocked"] is True
-

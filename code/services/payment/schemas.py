@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 
 class InitiatePaymentRequest(BaseModel):
     """Request schema for initiating payment."""
+
     order_id: str
     user_id: str
     amount: float = Field(..., ge=0)
@@ -17,12 +18,14 @@ class InitiatePaymentRequest(BaseModel):
 
 class ProcessPaymentRequest(BaseModel):
     """Request schema for processing payment."""
+
     payment_id: str
     transaction_id: str
 
 
 class RequestRefundRequest(BaseModel):
     """Request schema for requesting refund."""
+
     payment_id: str
     user_id: str
     reason: str = Field(..., max_length=500)
@@ -31,18 +34,21 @@ class RequestRefundRequest(BaseModel):
 
 class ProcessRefundRequest(BaseModel):
     """Request schema for processing refund."""
+
     refund_id: str
     transaction_id: str
 
 
 class DeclineRefundRequest(BaseModel):
     """Request schema for declining refund."""
+
     refund_id: str
     reason: str = Field(..., max_length=500)
 
 
 class PaymentResponse(BaseModel):
     """Response schema for payment information."""
+
     payment_id: str
     order_id: str
     user_id: str
@@ -58,6 +64,7 @@ class PaymentResponse(BaseModel):
 
 class RefundResponse(BaseModel):
     """Response schema for refund information."""
+
     refund_id: str
     payment_id: str
     user_id: str
@@ -69,4 +76,3 @@ class RefundResponse(BaseModel):
     completed_at: Optional[datetime]
 
     model_config = {"from_attributes": True}
-

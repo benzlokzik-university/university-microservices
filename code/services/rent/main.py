@@ -69,7 +69,9 @@ app.add_middleware(
 async def get_booking(booking_id: str) -> dict:
     """Get booking information from Booking service."""
     async with httpx.AsyncClient() as client:
-        response = await client.get(f"{BOOKING_SERVICE_URL}/api/v1/bookings/{booking_id}")
+        response = await client.get(
+            f"{BOOKING_SERVICE_URL}/api/v1/bookings/{booking_id}"
+        )
         if response.status_code == 200:
             return response.json()
         return None
@@ -78,7 +80,9 @@ async def get_booking(booking_id: str) -> dict:
 async def get_user_email(user_id: str) -> str:
     """Get user email from User Account service."""
     async with httpx.AsyncClient() as client:
-        response = await client.get(f"{USER_ACCOUNT_SERVICE_URL}/api/v1/users/{user_id}")
+        response = await client.get(
+            f"{USER_ACCOUNT_SERVICE_URL}/api/v1/users/{user_id}"
+        )
         if response.status_code == 200:
             user = response.json()
             return user.get("email", "user@example.com")
@@ -98,19 +102,18 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
     booking = await get_booking(request.booking_id)
     if not booking:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Booking not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Booking not found"
         )
-    
+
     if booking["status"] != "confirmed":
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Booking must be confirmed before creating order"
+            detail="Booking must be confirmed before creating order",
         )
-    
+
     # Calculate total amount (mock: 100 per day)
     total_amount = request.rental_days * 100.0
-    
+
     # Create order
     db_order = Order(
         booking_id=request.booking_id,
@@ -125,29 +128,32 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
     db.add(db_order)
     db.commit()
     db.refresh(db_order)
-    
+
     # Initiate payment via gRPC (synchronous communication)
     payment_result = await initiate_payment_grpc(
         order_id=db_order.order_id,
         user_id=request.user_id,
         amount=total_amount,
-        payment_method="card"
+        payment_method="card",
     )
-    
+
     if payment_result:
         db_order.payment_id = payment_result.get("payment_id")
         db.commit()
         db.refresh(db_order)
-    
+
     # Publish domain event
-    await publish_event("rent.order.created", {
-        "order_id": db_order.order_id,
-        "booking_id": request.booking_id,
-        "game_id": booking["game_id"],
-        "user_id": request.user_id,
-        "total_amount": total_amount,
-    })
-    
+    await publish_event(
+        "rent.order.created",
+        {
+            "order_id": db_order.order_id,
+            "booking_id": request.booking_id,
+            "game_id": booking["game_id"],
+            "user_id": request.user_id,
+            "total_amount": total_amount,
+        },
+    )
+
     return OrderResponse.model_validate(db_order)
 
 
@@ -158,41 +164,41 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
     summary="Send pickup notification",
 )
 async def send_pickup_notification(
-    order_id: str,
-    request: SendPickupNotificationRequest,
-    db: Session = Depends(get_db)
+    order_id: str, request: SendPickupNotificationRequest, db: Session = Depends(get_db)
 ):
     """Send pickup notification via OneSignal and SendGrid."""
     order = db.query(Order).filter(Order.order_id == order_id).first()
     if not order:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Order not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
         )
-    
+
     user_email = await get_user_email(order.user_id)
-    
+
     # Send push notification (OneSignal)
     await notification_service.send_push_notification(
         order.user_id,
         "Pickup Reminder",
-        f"Your game pickup is scheduled for {request.pickup_date}"
+        f"Your game pickup is scheduled for {request.pickup_date}",
     )
-    
+
     # Send email (SendGrid)
     await notification_service.send_email(
         user_email,
         "Game Pickup Reminder",
-        f"Your game pickup is scheduled for {request.pickup_date} at {request.pickup_location}"
+        f"Your game pickup is scheduled for {request.pickup_date} at {request.pickup_location}",
     )
-    
+
     # Publish domain event
-    await publish_event("rent.pickup_notification.sent", {
-        "order_id": order_id,
-        "pickup_date": request.pickup_date.isoformat(),
-        "pickup_location": request.pickup_location,
-    })
-    
+    await publish_event(
+        "rent.pickup_notification.sent",
+        {
+            "order_id": order_id,
+            "pickup_date": request.pickup_date.isoformat(),
+            "pickup_location": request.pickup_location,
+        },
+    )
+
     return {"success": True, "message": "Notifications sent"}
 
 
@@ -203,34 +209,34 @@ async def send_pickup_notification(
     summary="Confirm game receipt",
 )
 async def confirm_game_receipt(
-    order_id: str,
-    request: ConfirmGameReceiptRequest,
-    db: Session = Depends(get_db)
+    order_id: str, request: ConfirmGameReceiptRequest, db: Session = Depends(get_db)
 ):
     """Confirm that user received the game."""
     order = db.query(Order).filter(Order.order_id == order_id).first()
     if not order:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Order not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
         )
-    
+
     if order.user_id != request.user_id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="You don't have permission to confirm this order"
+            detail="You don't have permission to confirm this order",
         )
-    
+
     order.status = "active"
     db.commit()
     db.refresh(order)
-    
+
     # Publish domain event
-    await publish_event("rent.game_receipt.confirmed", {
-        "order_id": order_id,
-        "user_id": request.user_id,
-    })
-    
+    await publish_event(
+        "rent.game_receipt.confirmed",
+        {
+            "order_id": order_id,
+            "user_id": request.user_id,
+        },
+    )
+
     return OrderResponse.model_validate(order)
 
 
@@ -241,36 +247,36 @@ async def confirm_game_receipt(
     summary="Return game",
 )
 async def return_game(
-    order_id: str,
-    request: ReturnGameRequest,
-    db: Session = Depends(get_db)
+    order_id: str, request: ReturnGameRequest, db: Session = Depends(get_db)
 ):
     """Initiate game return."""
     order = db.query(Order).filter(Order.order_id == order_id).first()
     if not order:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Order not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
         )
-    
+
     if order.user_id != request.user_id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="You don't have permission to return this order"
+            detail="You don't have permission to return this order",
         )
-    
+
     order.status = "returned"
     order.return_date = datetime.now()
     db.commit()
     db.refresh(order)
-    
+
     # Publish domain event
-    await publish_event("rent.game.returned", {
-        "order_id": order_id,
-        "user_id": request.user_id,
-        "return_location": request.return_location,
-    })
-    
+    await publish_event(
+        "rent.game.returned",
+        {
+            "order_id": order_id,
+            "user_id": request.user_id,
+            "return_location": request.return_location,
+        },
+    )
+
     return OrderResponse.model_validate(order)
 
 
@@ -281,29 +287,29 @@ async def return_game(
     summary="Charge penalty",
 )
 async def charge_penalty(
-    order_id: str,
-    request: ChargePenaltyRequest,
-    db: Session = Depends(get_db)
+    order_id: str, request: ChargePenaltyRequest, db: Session = Depends(get_db)
 ):
     """Charge penalty for late return."""
     order = db.query(Order).filter(Order.order_id == order_id).first()
     if not order:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Order not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
         )
-    
+
     order.penalty_amount = request.penalty_amount
     db.commit()
     db.refresh(order)
-    
+
     # Publish domain event
-    await publish_event("rent.penalty.charged", {
-        "order_id": order_id,
-        "penalty_amount": request.penalty_amount,
-        "reason": request.reason,
-    })
-    
+    await publish_event(
+        "rent.penalty.charged",
+        {
+            "order_id": order_id,
+            "penalty_amount": request.penalty_amount,
+            "reason": request.reason,
+        },
+    )
+
     return OrderResponse.model_validate(order)
 
 
@@ -318,8 +324,7 @@ async def get_order(order_id: str, db: Session = Depends(get_db)):
     order = db.query(Order).filter(Order.order_id == order_id).first()
     if not order:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Order not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Order not found"
         )
     return OrderResponse.model_validate(order)
 
@@ -331,9 +336,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8005,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8005, reload=True)

@@ -75,7 +75,7 @@ async def add_game(request: AddGameRequest, db: Session = Depends(get_db)):
     db.add(db_game)
     db.commit()
     db.refresh(db_game)
-    
+
     return GameResponse.model_validate(db_game)
 
 
@@ -90,8 +90,7 @@ async def get_game(game_id: str, db: Session = Depends(get_db)):
     game = db.query(Game).filter(Game.game_id == game_id).first()
     if not game:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Game not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Game not found"
         )
     return GameResponse.model_validate(game)
 
@@ -103,18 +102,15 @@ async def get_game(game_id: str, db: Session = Depends(get_db)):
     summary="Update game information",
 )
 async def update_game_info(
-    game_id: str,
-    request: UpdateGameInfoRequest,
-    db: Session = Depends(get_db)
+    game_id: str, request: UpdateGameInfoRequest, db: Session = Depends(get_db)
 ):
     """Update game information."""
     game = db.query(Game).filter(Game.game_id == game_id).first()
     if not game:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Game not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Game not found"
         )
-    
+
     # Update fields if provided
     if request.name is not None:
         game.name = request.name
@@ -132,10 +128,10 @@ async def update_game_info(
         game.category = request.category
     if request.price_per_day is not None:
         game.price_per_day = request.price_per_day
-    
+
     db.commit()
     db.refresh(game)
-    
+
     return GameResponse.model_validate(game)
 
 
@@ -148,33 +144,33 @@ async def update_game_info(
 async def search_games(request: FindGameRequest, db: Session = Depends(get_db)):
     """Search games by various criteria."""
     query = db.query(Game)
-    
+
     # Apply filters
     filters = []
-    
+
     if request.query:
         filters.append(
             or_(
                 Game.name.ilike(f"%{request.query}%"),
-                Game.description.ilike(f"%{request.query}%")
+                Game.description.ilike(f"%{request.query}%"),
             )
         )
-    
+
     if request.category:
         filters.append(Game.category == request.category)
-    
+
     if request.min_players:
         filters.append(Game.max_players >= request.min_players)
-    
+
     if request.max_players:
         filters.append(Game.min_players <= request.max_players)
-    
+
     if request.max_price:
         filters.append(Game.price_per_day <= request.max_price)
-    
+
     if filters:
         query = query.filter(and_(*filters))
-    
+
     games = query.all()
     return [GameResponse.model_validate(game) for game in games]
 
@@ -186,35 +182,32 @@ async def search_games(request: FindGameRequest, db: Session = Depends(get_db)):
     summary="Update available games count",
 )
 async def update_available_games(
-    game_id: str,
-    request: UpdateAvailableGamesRequest,
-    db: Session = Depends(get_db)
+    game_id: str, request: UpdateAvailableGamesRequest, db: Session = Depends(get_db)
 ):
     """Update the number of available game copies."""
     game = db.query(Game).filter(Game.game_id == game_id).first()
     if not game:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Game not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Game not found"
         )
-    
+
     if request.available_count > game.total_copies:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Available count cannot exceed total copies"
+            detail="Available count cannot exceed total copies",
         )
-    
+
     game.available_count = request.available_count
-    
+
     # Update status based on availability
     if game.available_count == 0:
         game.status = "unavailable"
     elif game.status == "unavailable" and game.available_count > 0:
         game.status = "available"
-    
+
     db.commit()
     db.refresh(game)
-    
+
     return GameResponse.model_validate(game)
 
 
@@ -225,9 +218,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8002,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8002, reload=True)

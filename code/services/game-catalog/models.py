@@ -16,6 +16,7 @@ def generate_id():
 
 class Game(Base):
     """Game model for the database."""
+
     __tablename__ = "games"
 
     game_id = Column(String, primary_key=True, default=generate_id)
@@ -29,9 +30,12 @@ class Game(Base):
     price_per_day = Column(Float, nullable=False)
     total_copies = Column(Integer, nullable=False, default=1)
     available_count = Column(Integer, nullable=False, default=1)
-    status = Column(String, default="available", nullable=False)  # available, unavailable, reserved, rented, inspection, repair
+    status = Column(
+        String, default="available", nullable=False
+    )  # available, unavailable, reserved, rented, inspection, repair
     photo_urls = Column(ARRAY(String), default=[], nullable=False)
     rating = Column(Float, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
-
+    updated_at = Column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )

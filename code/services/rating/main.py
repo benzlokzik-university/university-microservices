@@ -63,13 +63,13 @@ async def update_game_rating(game_id: str):
     game_ratings = [r["rating"] for r in ratings_db.values() if r["game_id"] == game_id]
     if game_ratings:
         avg_rating = sum(game_ratings) / len(game_ratings)
-        
+
         # Update in Game Catalog service
         async with httpx.AsyncClient() as client:
             try:
                 await client.put(
                     f"{GAME_CATALOG_SERVICE_URL}/api/v1/games/{game_id}",
-                    json={"rating": avg_rating}
+                    json={"rating": avg_rating},
                 )
             except Exception as e:
                 print(f"Error updating game rating: {e}")
@@ -85,7 +85,7 @@ async def update_game_rating(game_id: str):
 async def leave_rating(request: LeaveRatingRequest):
     """Leave a rating for a game."""
     rating_id = str(uuid.uuid4())
-    
+
     rating = {
         "rating_id": rating_id,
         "game_id": request.game_id,
@@ -93,20 +93,23 @@ async def leave_rating(request: LeaveRatingRequest):
         "rating": request.rating,
         "created_at": datetime.now(),
     }
-    
+
     ratings_db[rating_id] = rating
-    
+
     # Update game rating in Game Catalog
     await update_game_rating(request.game_id)
-    
+
     # Publish domain event
-    await publish_event("rating.left", {
-        "rating_id": rating_id,
-        "game_id": request.game_id,
-        "user_id": request.user_id,
-        "rating": request.rating,
-    })
-    
+    await publish_event(
+        "rating.left",
+        {
+            "rating_id": rating_id,
+            "game_id": request.game_id,
+            "user_id": request.user_id,
+            "rating": request.rating,
+        },
+    )
+
     return RatingResponse(**rating)
 
 
@@ -121,9 +124,9 @@ async def leave_comment(request: LeaveCommentRequest):
     """Leave a comment for a game (with content moderation)."""
     # Analyze comment via mocked Perspective API
     is_moderated, scores = await perspective_api.analyze_comment(request.comment_text)
-    
+
     comment_id = str(uuid.uuid4())
-    
+
     comment = {
         "comment_id": comment_id,
         "game_id": request.game_id,
@@ -132,17 +135,20 @@ async def leave_comment(request: LeaveCommentRequest):
         "is_moderated": is_moderated,
         "created_at": datetime.now(),
     }
-    
+
     comments_db[comment_id] = comment
-    
+
     # Publish domain event
-    await publish_event("comment.left", {
-        "comment_id": comment_id,
-        "game_id": request.game_id,
-        "user_id": request.user_id,
-        "is_moderated": is_moderated,
-    })
-    
+    await publish_event(
+        "comment.left",
+        {
+            "comment_id": comment_id,
+            "game_id": request.game_id,
+            "user_id": request.user_id,
+            "is_moderated": is_moderated,
+        },
+    )
+
     return CommentResponse(**comment)
 
 
@@ -152,20 +158,20 @@ async def leave_comment(request: LeaveCommentRequest):
     tags=["Ratings"],
     summary="Update game rating (system command)",
 )
-async def update_game_rating_endpoint(
-    game_id: str,
-    request: UpdateGameRatingRequest
-):
+async def update_game_rating_endpoint(game_id: str, request: UpdateGameRatingRequest):
     """Update game rating (system command)."""
     # This would typically be called by an event handler
     # For now, we'll just acknowledge it
-    
+
     # Publish domain event
-    await publish_event("rating.updated", {
-        "game_id": game_id,
-        "new_rating": request.new_rating,
-    })
-    
+    await publish_event(
+        "rating.updated",
+        {
+            "game_id": game_id,
+            "new_rating": request.new_rating,
+        },
+    )
+
     return {"success": True, "message": "Game rating updated"}
 
 
@@ -180,8 +186,7 @@ async def get_rating(rating_id: str):
     rating = ratings_db.get(rating_id)
     if not rating:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Rating not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Rating not found"
         )
     return RatingResponse(**rating)
 
@@ -197,8 +202,7 @@ async def get_comment(comment_id: str):
     comment = comments_db.get(comment_id)
     if not comment:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Comment not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Comment not found"
         )
     return CommentResponse(**comment)
 
@@ -210,9 +214,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8006,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8006, reload=True)

@@ -56,7 +56,7 @@ app.add_middleware(
 async def book_game(request: BookGameRequest):
     """
     Book a game for a user.
-    
+
     This endpoint calls the User Account service to validate that the user
     exists and is not blocked (nested function call).
     """
@@ -64,10 +64,9 @@ async def book_game(request: BookGameRequest):
     is_valid = await validate_user(request.user_id)
     if not is_valid:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="User not found or blocked"
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found or blocked"
         )
-    
+
     # Create booking
     booking_id = str(uuid.uuid4())
     booking = {
@@ -79,17 +78,20 @@ async def book_game(request: BookGameRequest):
         "pickup_date": request.pickup_date,
         "created_at": datetime.now(),
     }
-    
+
     bookings_db[booking_id] = booking
-    
+
     # Publish domain event
-    await publish_event("booking.created", {
-        "booking_id": booking_id,
-        "game_id": request.game_id,
-        "user_id": request.user_id,
-        "status": "pending",
-    })
-    
+    await publish_event(
+        "booking.created",
+        {
+            "booking_id": booking_id,
+            "game_id": request.game_id,
+            "user_id": request.user_id,
+            "status": "pending",
+        },
+    )
+
     return BookingResponse(**booking)
 
 
@@ -104,28 +106,30 @@ async def cancel_booking(booking_id: str, request: CancelBookingRequest):
     booking = bookings_db.get(booking_id)
     if not booking:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Booking not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Booking not found"
         )
-    
+
     # Verify user owns the booking
     if booking["user_id"] != request.user_id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="You don't have permission to cancel this booking"
+            detail="You don't have permission to cancel this booking",
         )
-    
+
     # Update booking status
     booking["status"] = "canceled"
     bookings_db[booking_id] = booking
-    
+
     # Publish domain event
-    await publish_event("booking.canceled", {
-        "booking_id": booking_id,
-        "user_id": request.user_id,
-        "reason": request.reason,
-    })
-    
+    await publish_event(
+        "booking.canceled",
+        {
+            "booking_id": booking_id,
+            "user_id": request.user_id,
+            "reason": request.reason,
+        },
+    )
+
     return BookingResponse(**booking)
 
 
@@ -140,10 +144,9 @@ async def get_booking(booking_id: str):
     booking = bookings_db.get(booking_id)
     if not booking:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Booking not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Booking not found"
         )
-    
+
     return BookingResponse(**booking)
 
 
@@ -154,9 +157,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8003,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8003, reload=True)

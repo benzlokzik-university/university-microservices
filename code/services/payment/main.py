@@ -40,12 +40,12 @@ refunds_db = {}
 async def lifespan(app: FastAPI):
     """Lifecycle events for the FastAPI application."""
     print("🚀 Payment service starting up...")
-    
+
     # Start gRPC server in background
     # grpc_task = asyncio.create_task(serve_grpc(payments_db, refunds_db))
-    
+
     yield
-    
+
     print("🛑 Payment service shutting down...")
 
 
@@ -76,7 +76,7 @@ app.add_middleware(
 async def initiate_payment(request: InitiatePaymentRequest):
     """Initiate a new payment."""
     payment_id = str(uuid.uuid4())
-    
+
     payment = {
         "payment_id": payment_id,
         "order_id": request.order_id,
@@ -88,17 +88,20 @@ async def initiate_payment(request: InitiatePaymentRequest):
         "created_at": datetime.now(),
         "completed_at": None,
     }
-    
+
     payments_db[payment_id] = payment
-    
+
     # Publish domain event
-    await publish_event("payment.initiated", {
-        "payment_id": payment_id,
-        "order_id": request.order_id,
-        "user_id": request.user_id,
-        "amount": request.amount,
-    })
-    
+    await publish_event(
+        "payment.initiated",
+        {
+            "payment_id": payment_id,
+            "order_id": request.order_id,
+            "user_id": request.user_id,
+            "amount": request.amount,
+        },
+    )
+
     return PaymentResponse(**payment)
 
 
@@ -113,17 +116,14 @@ async def process_payment(payment_id: str, request: ProcessPaymentRequest):
     payment = payments_db.get(payment_id)
     if not payment:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Payment not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Payment not found"
         )
-    
+
     # Process through mocked gateway
     result = await payment_gateway.process_payment(
-        payment_id,
-        payment["amount"],
-        payment["payment_method"]
+        payment_id, payment["amount"], payment["payment_method"]
     )
-    
+
     # Update payment
     payment["status"] = result["status"]
     payment["transaction_id"] = result["transaction_id"]
@@ -131,16 +131,21 @@ async def process_payment(payment_id: str, request: ProcessPaymentRequest):
         payment["completed_at"] = datetime.now()
         # Mock OFD (fiscal data operator) - just log
         print(f"[OFD] Fiscal receipt generated for payment {payment_id}")
-    
+
     # Publish domain event
-    event_type = "payment.successful" if result["status"] == "completed" else "payment.declined"
-    await publish_event(event_type, {
-        "payment_id": payment_id,
-        "order_id": payment["order_id"],
-        "status": result["status"],
-        "transaction_id": result["transaction_id"],
-    })
-    
+    event_type = (
+        "payment.successful" if result["status"] == "completed" else "payment.declined"
+    )
+    await publish_event(
+        event_type,
+        {
+            "payment_id": payment_id,
+            "order_id": payment["order_id"],
+            "status": result["status"],
+            "transaction_id": result["transaction_id"],
+        },
+    )
+
     return PaymentResponse(**payment)
 
 
@@ -156,19 +161,18 @@ async def request_refund(request: RequestRefundRequest):
     payment = payments_db.get(request.payment_id)
     if not payment:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Payment not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Payment not found"
         )
-    
+
     if payment["status"] != "completed":
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Can only refund completed payments"
+            detail="Can only refund completed payments",
         )
-    
+
     refund_id = str(uuid.uuid4())
     refund_amount = request.amount or payment["amount"]
-    
+
     refund = {
         "refund_id": refund_id,
         "payment_id": request.payment_id,
@@ -180,17 +184,20 @@ async def request_refund(request: RequestRefundRequest):
         "created_at": datetime.now(),
         "completed_at": None,
     }
-    
+
     refunds_db[refund_id] = refund
-    
+
     # Publish domain event
-    await publish_event("refund.requested", {
-        "refund_id": refund_id,
-        "payment_id": request.payment_id,
-        "user_id": request.user_id,
-        "amount": refund_amount,
-    })
-    
+    await publish_event(
+        "refund.requested",
+        {
+            "refund_id": refund_id,
+            "payment_id": request.payment_id,
+            "user_id": request.user_id,
+            "amount": refund_amount,
+        },
+    )
+
     return RefundResponse(**refund)
 
 
@@ -205,19 +212,16 @@ async def process_refund(refund_id: str, request: ProcessRefundRequest):
     refund = refunds_db.get(refund_id)
     if not refund:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Refund not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Refund not found"
         )
-    
+
     payment = payments_db.get(refund["payment_id"])
-    
+
     # Process through mocked gateway
     result = await payment_gateway.process_refund(
-        refund_id,
-        refund["payment_id"],
-        refund["amount"]
+        refund_id, refund["payment_id"], refund["amount"]
     )
-    
+
     # Update refund
     refund["status"] = result["status"]
     refund["transaction_id"] = result["transaction_id"]
@@ -226,15 +230,18 @@ async def process_refund(refund_id: str, request: ProcessRefundRequest):
         # Update payment status
         if payment:
             payment["status"] = "refunded"
-    
+
     # Publish domain event
-    await publish_event("refund.processed", {
-        "refund_id": refund_id,
-        "payment_id": refund["payment_id"],
-        "status": result["status"],
-        "transaction_id": result["transaction_id"],
-    })
-    
+    await publish_event(
+        "refund.processed",
+        {
+            "refund_id": refund_id,
+            "payment_id": refund["payment_id"],
+            "status": result["status"],
+            "transaction_id": result["transaction_id"],
+        },
+    )
+
     return RefundResponse(**refund)
 
 
@@ -249,19 +256,21 @@ async def decline_refund(refund_id: str, request: DeclineRefundRequest):
     refund = refunds_db.get(refund_id)
     if not refund:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Refund not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Refund not found"
         )
-    
+
     refund["status"] = "declined"
-    
+
     # Publish domain event
-    await publish_event("refund.declined", {
-        "refund_id": refund_id,
-        "payment_id": refund["payment_id"],
-        "reason": request.reason,
-    })
-    
+    await publish_event(
+        "refund.declined",
+        {
+            "refund_id": refund_id,
+            "payment_id": refund["payment_id"],
+            "reason": request.reason,
+        },
+    )
+
     return RefundResponse(**refund)
 
 
@@ -276,8 +285,7 @@ async def get_payment(payment_id: str):
     payment = payments_db.get(payment_id)
     if not payment:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Payment not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Payment not found"
         )
     return PaymentResponse(**payment)
 
@@ -293,8 +301,7 @@ async def get_refund(refund_id: str):
     refund = refunds_db.get(refund_id)
     if not refund:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Refund not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Refund not found"
         )
     return RefundResponse(**refund)
 
@@ -306,9 +313,4 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8004,
-        reload=True
-    )
+    uvicorn.run("main:app", host="0.0.0.0", port=8004, reload=True)

@@ -19,79 +19,78 @@ SLEEP_TIME = 2  # секунды
 
 async def producer():
     """Производитель сообщений для fanout exchange"""
-    connection: AbstractConnection = await connect_robust("amqp://guest:guest@localhost/")
+    connection: AbstractConnection = await connect_robust(
+        "amqp://guest:guest@localhost/"
+    )
     channel: AbstractChannel = await connection.channel()
-    
+
     # Создание durable fanout exchange для событий каталога игр
     exchange = await channel.declare_exchange(
         EXCHANGE_NAME,
         ExchangeType.FANOUT,
-        durable=True  # Exchange сохранится при перезапуске
+        durable=True,  # Exchange сохранится при перезапуске
     )
-    
+
     # Создание durable очереди
     queue = await channel.declare_queue(
         QUEUE_NAME,
-        durable=True  # Очередь сохранится при перезапуске
+        durable=True,  # Очередь сохранится при перезапуске
     )
-    
+
     # Привязка очереди к exchange
     await queue.bind(exchange)
-    
+
     print(f"Producer: Fanout exchange '{EXCHANGE_NAME}' создан (durable)")
     print(f"Producer: Очередь '{QUEUE_NAME}' создана (durable)")
-    
+
     # Отправка сообщений с задержкой
     events = [
         "Игра добавлена в каталог",
         "Информация об игре обновлена",
         "Количество доступных к аренде игр обновлено",
         "Игра помечена как недоступная",
-        "Фотографии игры загружены"
+        "Фотографии игры загружены",
     ]
-    
+
     for i, event in enumerate(events, 1):
         message = f"{event} (сообщение {i})"
         await exchange.publish(
             Message(
                 message.encode(),
-                delivery_mode=2  # Persistent сообщение
+                delivery_mode=2,  # Persistent сообщение
             ),
-            routing_key=""  # Для fanout routing_key игнорируется
+            routing_key="",  # Для fanout routing_key игнорируется
         )
         print(f"Producer: Отправлено - {message}")
         print(f"Producer: Сон {SLEEP_SYMBOL} на {SLEEP_TIME} секунд...")
         await asyncio.sleep(SLEEP_TIME)
-    
+
     await connection.close()
     print("Producer: Завершен")
 
 
 async def consumer():
     """Потребитель сообщений из fanout exchange"""
-    connection: AbstractConnection = await connect_robust("amqp://guest:guest@localhost/")
+    connection: AbstractConnection = await connect_robust(
+        "amqp://guest:guest@localhost/"
+    )
     channel: AbstractChannel = await connection.channel()
-    
+
     # Убеждаемся, что exchange и очередь существуют
     exchange = await channel.declare_exchange(
-        EXCHANGE_NAME,
-        ExchangeType.FANOUT,
-        durable=True
+        EXCHANGE_NAME, ExchangeType.FANOUT, durable=True
     )
-    queue = await channel.declare_queue(
-        QUEUE_NAME,
-        durable=True
-    )
+    queue = await channel.declare_queue(QUEUE_NAME, durable=True)
     await queue.bind(exchange)
-    
+
     async def process_message(message):
         async with message.process():
             print(f"Consumer: Получено - {message.body.decode()}")
             print(f"Consumer: Сон {SLEEP_SYMBOL} на {SLEEP_TIME} секунд...")
             await asyncio.sleep(SLEEP_TIME)
-    
+
     await queue.consume(process_message)
-    
+
     print("Consumer: Ожидание сообщений. Для выхода нажмите Ctrl+C")
     try:
         await asyncio.Future()  # Бесконечное ожидание
@@ -109,4 +108,3 @@ if __name__ == "__main__":
         print("Использование:")
         print("  python task2_fanout.py producer  # Запустить производителя")
         print("  python task2_fanout.py consumer  # Запустить потребителя")
-

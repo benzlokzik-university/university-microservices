@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field, HttpUrl
 
 class AddGameRequest(BaseModel):
     """Request schema for adding a game."""
+
     name: str = Field(..., min_length=1, max_length=200)
     description: Optional[str] = Field(None, max_length=2000)
     min_players: int = Field(..., ge=1, le=20)
@@ -22,6 +23,7 @@ class AddGameRequest(BaseModel):
 
 class UpdateGameInfoRequest(BaseModel):
     """Request schema for updating game information."""
+
     name: Optional[str] = Field(None, min_length=1, max_length=200)
     description: Optional[str] = Field(None, max_length=2000)
     min_players: Optional[int] = Field(None, ge=1, le=20)
@@ -34,11 +36,13 @@ class UpdateGameInfoRequest(BaseModel):
 
 class UpdateAvailableGamesRequest(BaseModel):
     """Request schema for updating available games count."""
+
     available_count: int = Field(..., ge=0)
 
 
 class FindGameRequest(BaseModel):
     """Request schema for searching games."""
+
     query: Optional[str] = Field(None, max_length=200)
     category: Optional[str] = Field(None, max_length=100)
     min_players: Optional[int] = Field(None, ge=1)
@@ -48,6 +52,7 @@ class FindGameRequest(BaseModel):
 
 class GameResponse(BaseModel):
     """Response schema for game information."""
+
     game_id: str
     name: str
     description: Optional[str]
@@ -66,4 +71,3 @@ class GameResponse(BaseModel):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
-

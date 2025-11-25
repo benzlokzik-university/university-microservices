@@ -25,7 +25,7 @@ def mock_payment_gateway():
 
 class TestPaymentComponent:
     """Component tests for payment operations."""
-    
+
     def test_initiate_payment(self, client):
         """Test initiating a payment."""
         response = client.post(
@@ -34,8 +34,8 @@ class TestPaymentComponent:
                 "order_id": "order-123",
                 "user_id": "user-456",
                 "amount": 1000.0,
-                "payment_method": "card"
-            }
+                "payment_method": "card",
+            },
         )
         assert response.status_code == 201
         data = response.json()
@@ -44,7 +44,7 @@ class TestPaymentComponent:
         assert data["amount"] == 1000.0
         assert data["status"] == "initiated"
         assert "payment_id" in data
-    
+
     def test_process_payment_success(self, client, mock_payment_gateway):
         """Test processing a payment successfully."""
         # Initiate payment
@@ -54,30 +54,26 @@ class TestPaymentComponent:
                 "order_id": "order-123",
                 "user_id": "user-456",
                 "amount": 1000.0,
-                "payment_method": "card"
-            }
+                "payment_method": "card",
+            },
         )
         payment_id = initiate_response.json()["payment_id"]
-        
+
         # Mock successful payment processing
-        mock_payment_gateway.process_payment = AsyncMock(return_value={
-            "transaction_id": "TXN-123456",
-            "status": "completed"
-        })
-        
+        mock_payment_gateway.process_payment = AsyncMock(
+            return_value={"transaction_id": "TXN-123456", "status": "completed"}
+        )
+
         # Process payment
         response = client.post(
             f"/api/v1/payments/{payment_id}/process",
-            json={
-                "payment_id": payment_id,
-                "transaction_id": "TXN-123456"
-            }
+            json={"payment_id": payment_id, "transaction_id": "TXN-123456"},
         )
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "completed"
         assert data["transaction_id"] == "TXN-123456"
-    
+
     def test_process_payment_declined(self, client, mock_payment_gateway):
         """Test processing a payment that gets declined."""
         # Initiate payment
@@ -87,29 +83,25 @@ class TestPaymentComponent:
                 "order_id": "order-123",
                 "user_id": "user-456",
                 "amount": 1000.0,
-                "payment_method": "card"
-            }
+                "payment_method": "card",
+            },
         )
         payment_id = initiate_response.json()["payment_id"]
-        
+
         # Mock declined payment
-        mock_payment_gateway.process_payment = AsyncMock(return_value={
-            "transaction_id": "TXN-789",
-            "status": "declined"
-        })
-        
+        mock_payment_gateway.process_payment = AsyncMock(
+            return_value={"transaction_id": "TXN-789", "status": "declined"}
+        )
+
         # Process payment
         response = client.post(
             f"/api/v1/payments/{payment_id}/process",
-            json={
-                "payment_id": payment_id,
-                "transaction_id": "TXN-789"
-            }
+            json={"payment_id": payment_id, "transaction_id": "TXN-789"},
         )
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "declined"
-    
+
     def test_request_refund(self, client):
         """Test requesting a refund."""
         # Create and process payment first
@@ -119,22 +111,21 @@ class TestPaymentComponent:
                 "order_id": "order-123",
                 "user_id": "user-456",
                 "amount": 1000.0,
-                "payment_method": "card"
-            }
+                "payment_method": "card",
+            },
         )
         payment_id = initiate_response.json()["payment_id"]
-        
+
         # Mock successful payment
         with patch("main.payment_gateway") as mock_gateway:
-            mock_gateway.process_payment = AsyncMock(return_value={
-                "transaction_id": "TXN-123",
-                "status": "completed"
-            })
+            mock_gateway.process_payment = AsyncMock(
+                return_value={"transaction_id": "TXN-123", "status": "completed"}
+            )
             client.post(
                 f"/api/v1/payments/{payment_id}/process",
-                json={"payment_id": payment_id, "transaction_id": "TXN-123"}
+                json={"payment_id": payment_id, "transaction_id": "TXN-123"},
             )
-        
+
         # Request refund
         response = client.post(
             "/api/v1/refunds",
@@ -142,15 +133,15 @@ class TestPaymentComponent:
                 "payment_id": payment_id,
                 "user_id": "user-456",
                 "reason": "Order cancellation",
-                "amount": 1000.0
-            }
+                "amount": 1000.0,
+            },
         )
         assert response.status_code == 201
         data = response.json()
         assert data["payment_id"] == payment_id
         assert data["status"] == "requested"
         assert data["reason"] == "Order cancellation"
-    
+
     def test_get_payment(self, client):
         """Test getting payment information."""
         # Create payment
@@ -160,15 +151,14 @@ class TestPaymentComponent:
                 "order_id": "order-123",
                 "user_id": "user-456",
                 "amount": 1000.0,
-                "payment_method": "card"
-            }
+                "payment_method": "card",
+            },
         )
         payment_id = create_response.json()["payment_id"]
-        
+
         # Get payment
         response = client.get(f"/api/v1/payments/{payment_id}")
         assert response.status_code == 200
         data = response.json()
         assert data["payment_id"] == payment_id
         assert data["amount"] == 1000.0
-

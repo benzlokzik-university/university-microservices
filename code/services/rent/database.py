@@ -9,8 +9,7 @@ import os
 
 # Database URL from environment variable or default
 DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://postgres:postgres@rent-db:5432/rent"
+    "DATABASE_URL", "postgresql://postgres:postgres@rent-db:5432/rent"
 )
 
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
@@ -26,4 +25,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
