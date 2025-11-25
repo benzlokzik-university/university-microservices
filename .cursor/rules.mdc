@@ -1,0 +1,11 @@
+---
+alwaysApply: false
+---
+
+# Project description
+
+- This is a microservice architecture university project
+- Each service is a separate project stored in the `code/services` directory
+- Each service has its own `pyproject.toml` file
+- Each service has its own `tests` directory
+- Instead of editing README.md files, you should edit the `report.typ` file (ask for which file to edit)
