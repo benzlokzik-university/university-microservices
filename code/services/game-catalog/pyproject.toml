@@ -1,0 +1,13 @@
+[project]
+name = "game-catalog"
+version = "0.1.0"
+description = "Game Catalog Service for Game Rental System"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0",
+    "python-multipart>=0.0.6",
+]
