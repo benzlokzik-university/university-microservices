@@ -29,7 +29,11 @@ async def lifespan(app: FastAPI):
     """Lifecycle events for the FastAPI application."""
     # Startup - create tables
     print("🚀 User Account service starting up...")
-    Base.metadata.create_all(bind=engine)
+    try:
+        Base.metadata.create_all(bind=engine)
+    except Exception as e:
+        # In test environment, database might already be set up
+        print(f"Note: Database setup: {e}")
     yield
     # Shutdown
     print("🛑 User Account service shutting down...")

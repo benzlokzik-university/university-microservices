@@ -26,7 +26,7 @@ async def create_exclusive_queue():
     
     # Отправляем тестовое сообщение
     await channel.default_exchange.publish(
-        Message(b"Тестовое сообщение для эксклюзивной очереди"),
+        Message("Тестовое сообщение для эксклюзивной очереди".encode('utf-8')),
         routing_key="game_search_temporary"
     )
     
@@ -52,7 +52,7 @@ async def create_durable_queue():
     # Отправляем persistent сообщение
     await channel.default_exchange.publish(
         Message(
-            b"Пользователь зарегистрирован: user123",
+            "Пользователь зарегистрирован: user123".encode('utf-8'),
             delivery_mode=2  # Persistent сообщение
         ),
         routing_key="user_registered"
@@ -86,7 +86,7 @@ async def create_auto_delete_queue():
     
     # Отправляем тестовое сообщение
     await channel.default_exchange.publish(
-        Message(b"Временное уведомление"),
+        Message("Временное уведомление".encode('utf-8')),
         routing_key="notification_temporary"
     )
     

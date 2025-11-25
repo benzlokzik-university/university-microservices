@@ -1,0 +1,9 @@
+[project]
+name = "rabbitmq-tasks"
+version = "0.1.0"
+description = "RabbitMQ tasks for practical work 5"
+requires-python = ">=3.12"
+dependencies = [
+    "aio-pika>=9.0.0",
+]
+

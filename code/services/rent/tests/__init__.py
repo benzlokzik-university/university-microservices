@@ -1,0 +1,2 @@
+"""Tests for Rent service."""
+
