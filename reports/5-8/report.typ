@@ -2292,6 +2292,414 @@ docker stats
 
 #pagebreak()
 
+= Практическая работа №8
+
+== Цель работы
+
+Разработка и настройка тестирования микросервисной системы. Реализация интеграционных и компонентных тестов для всех сервисов. Настройка CI/CD конвейера для автоматического выполнения тестов.
+
+== Ход работы
+
+=== Задание 1: Выбор типов тестирования
+
+Из трех доступных типов тестирования (unit, интеграционное, компонентное) были выбраны два:
+
+#list(
+  [*Интеграционное тестирование* — для сервисов с базами данных (User Account, Game Catalog, Rent);],
+  [*Компонентное тестирование* — для сервисов с внешними зависимостями (Booking, Payment, Rating).],
+)
+
+*Обоснование выбора:*
+- Интеграционные тесты необходимы для проверки взаимодействия сервисов с базами данных
+- Компонентные тесты позволяют изолировать сервисы и мокировать внешние зависимости
+- Unit-тесты не были выбраны, так как основная логика уже покрыта интеграционными и компонентными тестами
+
+=== Задание 2: Реализация интеграционных тестов
+
+Интеграционные тесты реализованы для сервисов, работающих с базами данных PostgreSQL.
+
+==== 2.1. Сервис User Account
+
+Реализованы интеграционные тесты для всех основных операций:
+
+#list(
+  [Регистрация пользователя;],
+  [Авторизация пользователя;],
+  [Получение информации о пользователе;],
+  [Обновление профиля;],
+  [Блокировка пользователя;],
+  [Проверка дублирования email;],
+  [Проверка авторизации заблокированного пользователя.],
+)
+
+*Особенности реализации:*
+- Использование SQLite in-memory для изоляции тестов
+- Переопределение database engine в тестовом окружении
+- Автоматическая настройка и очистка базы данных для каждого теста
+
+*Пример теста:*
+
+```python
+def test_register_user_success(self, client):
+    """Test successful user registration."""
+    response = client.post(
+        "/api/v1/users/register",
+        json={
+            "email": "test@example.com",
+            "password": "securepassword123",
+            "first_name": "John",
+            "last_name": "Doe",
+            "phone": "+79991234567"
+        }
+    )
+    assert response.status_code == status.HTTP_201_CREATED
+    data = response.json()
+    assert data["email"] == "test@example.com"
+    assert data["first_name"] == "John"
+    assert "user_id" in data
+```
+
+==== 2.2. Сервис Game Catalog
+
+Реализованы интеграционные тесты для операций с каталогом игр:
+
+#list(
+  [Добавление игры в каталог;],
+  [Получение информации об игре;],
+  [Обновление информации об игре;],
+  [Поиск игр по различным критериям;],
+  [Обновление доступности игр.],
+)
+
+*Пример теста:*
+
+```python
+def test_add_game(self, client):
+    """Test adding a new game to catalog."""
+    response = client.post(
+        "/api/v1/games",
+        json={
+            "name": "Каркассон",
+            "description": "Стратегическая настольная игра",
+            "min_players": 2,
+            "max_players": 5,
+            "price_per_day": 150.0,
+            "total_copies": 10
+        }
+    )
+    assert response.status_code == status.HTTP_201_CREATED
+    data = response.json()
+    assert data["name"] == "Каркассон"
+    assert data["status"] == "available"
+```
+
+==== 2.3. Сервис Rent
+
+Реализованы интеграционные тесты для операций аренды:
+
+#list(
+  [Создание заказа на аренду;],
+  [Подтверждение получения игры;],
+  [Возврат игры;],
+  [Начисление штрафа;],
+  [Получение информации о заказе.],
+)
+
+*Особенности:*
+- Мокирование gRPC вызовов к сервису Payment
+- Мокирование внешних сервисов уведомлений
+- Проверка изменения статусов заказов
+
+=== Задание 3: Реализация компонентных тестов
+
+Компонентные тесты реализованы для сервисов с внешними зависимостями, где используются моки.
+
+==== 3.1. Сервис Booking
+
+Компонентные тесты проверяют логику бронирования с мокированным сервисом User Account:
+
+#list(
+  [Создание бронирования с валидным пользователем;],
+  [Отказ в создании бронирования для несуществующего пользователя;],
+  [Отмена бронирования;],
+  [Получение информации о бронировании;],
+  [Проверка прав доступа при отмене.],
+)
+
+*Пример теста:*
+
+```python
+def test_book_game_success(self, client, mock_user_service):
+    """Test successful game booking with mocked user validation."""
+    # Mock user validation to return True
+    mock_user_service.return_value = True
+    
+    response = client.post(
+        "/api/v1/bookings",
+        json={
+            "game_id": "game-123",
+            "user_id": "user-456",
+            "booking_date": "2024-01-20T10:00:00",
+            "pickup_date": "2024-01-21T10:00:00"
+        }
+    )
+    assert response.status_code == 201
+    data = response.json()
+    assert data["game_id"] == "game-123"
+    assert data["status"] == "pending"
+```
+
+==== 3.2. Сервис Payment
+
+Компонентные тесты проверяют обработку платежей с мокированным платежным шлюзом:
+
+#list(
+  [Инициирование платежа;],
+  [Успешная обработка платежа;],
+  [Отклонение платежа;],
+  [Запрос на возврат средств;],
+  [Обработка возврата;],
+  [Получение информации о платеже.],
+)
+
+*Особенности:*
+- Мокирование платежного шлюза (Эквайринг)
+- Проверка различных сценариев обработки платежей
+- Тестирование логики возврата средств
+
+==== 3.3. Сервис Rating
+
+Компонентные тесты проверяют функциональность оценок и комментариев:
+
+#list(
+  [Оставление оценки игре;],
+  [Оставление комментария с модерацией;],
+  [Обработка токсичных комментариев;],
+  [Получение информации об оценке;],
+  [Получение информации о комментарии.],
+)
+
+*Особенности:*
+- Мокирование Perspective API для модерации
+- Проверка логики модерации комментариев
+- Тестирование обновления рейтинга игр
+
+=== Задание 4: Настройка зависимостей для тестирования
+
+Все тестовые зависимости вынесены в отдельную группу `test` в `pyproject.toml` каждого сервиса с использованием UV dependency groups.
+
+*Пример конфигурации:*
+
+```toml
+[project]
+name = "user-account"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.104.0",
+    "sqlalchemy>=2.0.0",
+    # ... основные зависимости
+]
+
+[dependency-groups]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.25.0",
+    "pytest-cov>=4.1.0",
+]
+```
+
+*Запуск тестов:*
+
+```bash
+uv sync --group test
+uv run --group test pytest tests/ -v
+```
+
+=== Задание 5: Настройка CI/CD конвейера
+
+Реализован CI/CD конвейер на GitHub Actions для автоматического выполнения тестов при каждом push и pull request.
+
+==== 5.1. Конфигурация GitHub Actions
+
+Файл `.github/workflows/ci.yml` содержит:
+
+#list(
+  [Триггеры на push и pull request в ветки main и develop;],
+  [Матричную стратегию для параллельного тестирования всех сервисов;],
+  [Настройку сервисов PostgreSQL и RabbitMQ для тестирования;],
+  [Установку зависимостей через UV;],
+  [Запуск тестов с покрытием кода;],
+  [Загрузку отчетов о покрытии в Codecov.],
+)
+
+*Структура workflow:*
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - user-account
+          - game-catalog
+          - booking
+          - payment
+          - rent
+          - rating
+    
+    services:
+      postgres:
+        image: postgres:15-alpine
+        # ... конфигурация
+      rabbitmq:
+        image: rabbitmq:3-management-alpine
+        # ... конфигурация
+    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+      - name: Install UV
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Install dependencies
+        run: uv sync --group test
+      - name: Run tests
+        run: uv run --group test pytest tests/ -v --cov=. --cov-report=xml
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+```
+
+==== 5.2. Особенности CI/CD конвейера
+
+#list(
+  [Параллельное выполнение тестов для всех сервисов;],
+  [Использование сервисов GitHub Actions для PostgreSQL и RabbitMQ;],
+  [Автоматическая установка зависимостей через UV;],
+  [Генерация отчетов о покрытии кода;],
+  [Интеграция с Codecov для отслеживания покрытия.],
+)
+
+=== Реализация
+
+==== Структура тестов
+
+Тесты организованы в директории `tests/` для каждого сервиса:
+
+```
+code/services/
+├── user-account/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── conftest.py          # Pytest конфигурация и fixtures
+│   │   └── test_integration.py  # Интеграционные тесты
+│   └── pyproject.toml
+├── game-catalog/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── conftest.py
+│   │   └── test_integration.py
+│   └── pyproject.toml
+├── booking/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   └── test_component.py   # Компонентные тесты
+│   └── pyproject.toml
+├── payment/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   └── test_component.py
+│   └── pyproject.toml
+├── rent/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── conftest.py
+│   │   └── test_integration.py
+│   └── pyproject.toml
+└── rating/
+    ├── tests/
+    │   ├── __init__.py
+    │   └── test_component.py
+    └── pyproject.toml
+```
+
+==== Pytest конфигурация
+
+Для сервисов с базами данных используется `conftest.py` с настройкой тестовой базы данных:
+
+```python
+# Test database URL (SQLite in-memory for tests)
+TEST_DATABASE_URL = "sqlite:///:memory:"
+
+# Override database before importing main
+test_engine = create_engine(
+    TEST_DATABASE_URL,
+    connect_args={"check_same_thread": False},
+    poolclass=StaticPool,
+)
+
+# Override the engine in database module
+import database
+database.engine = test_engine
+
+@pytest.fixture(scope="function", autouse=True)
+def setup_test_db():
+    """Set up and tear down test database for each test."""
+    Base.metadata.create_all(bind=test_engine)
+    yield
+    Base.metadata.drop_all(bind=test_engine)
+```
+
+==== Мокирование зависимостей
+
+Для компонентных тестов используются моки:
+
+#list(
+  [*pytest-mock* — для создания моков функций и методов;],
+  [*unittest.mock* — для мокирования внешних сервисов;],
+  [Переопределение зависимостей через `app.dependency_overrides` в FastAPI.],
+)
+
+=== Запуск тестов
+
+==== Локальный запуск
+
+Для запуска тестов локально:
+
+```bash
+# Установка тестовых зависимостей
+uv sync --group test
+
+# Запуск всех тестов
+uv run --group test pytest tests/ -v
+
+# Запуск с покрытием кода
+uv run --group test pytest tests/ -v --cov=. --cov-report=term
+
+# Запуск конкретного теста
+uv run --group test pytest tests/test_integration.py::TestUserRegistration::test_register_user_success -v
+```
+
+==== Запуск в CI/CD
+
+Тесты автоматически выполняются при каждом push и pull request через GitHub Actions. Результаты тестирования и покрытие кода отображаются в интерфейсе GitHub и Codecov.
+
+== Вывод
+
+В ходе выполнения практической работы были реализованы интеграционные и компонентные тесты для всех микросервисов системы. Интеграционные тесты проверяют взаимодействие сервисов с базами данных, а компонентные тесты изолируют сервисы и проверяют их логику с мокированными зависимостями. Настроен CI/CD конвейер на GitHub Actions для автоматического выполнения тестов при каждом изменении кода. Получены практические навыки написания тестов для микросервисных систем, настройки тестового окружения и автоматизации процесса тестирования.
+
+#pagebreak()
+
 = Список использованных источников
 
 + Камышев, М. Моделирование микросервисов с помощью Event storming / М. Камышев // Хабр : [сайт]. — 2019. — URL: https://habr.com/ru/company/piter/blog/448866/
