@@ -68,6 +68,11 @@ rabbitmqadmin declare queue name=user_registered durable=true
 - Durable: `true`
 - Использование: события регистрации пользователей
 
+#figure(
+  image("5/rmq_user_registered.png", width: 90%),
+  caption: [Durable очередь user_registered в RabbitMQ Management UI],
+) <fig-task5-1-2>
+
 ==== 1.3. Автоудаляемая очередь
 
 Автоудаляемая очередь автоматически удаляется, когда на ней не остается активных потребителей. Такая очередь используется для временных уведомлений, которые не требуют долгосрочного хранения.
@@ -81,6 +86,11 @@ rabbitmqadmin declare queue name=notification_temporary auto_delete=true
 - Название: `notification_temporary`
 - Auto-delete: `true`
 - Использование: временные уведомления
+
+#figure(
+  image("5/rmq_run_auto_delete_queue.png", width: 90%),
+  caption: [Выполнение скрипта для создания автоудаляемой очереди],
+) <fig-task5-1-3>
 
 === Задание 2: Реализация схемы взаимодействия сервисов с нагрузкой
 
@@ -109,6 +119,16 @@ rabbitmqadmin declare binding source=game_catalog_events destination=game_catalo
 - Игра помечена как недоступная
 - Фотографии игры загружены
 
+#figure(
+  image("5/rmq_game_catalog_events_exchange.png", width: 90%),
+  caption: [Fanout exchange game_catalog_events в RabbitMQ Management UI],
+) <fig-task5-2-1-exchange>
+
+#figure(
+  image("5/rmq_game_catalog_listener_queue.png", width: 90%),
+  caption: [Очередь game_catalog_listener, привязанная к fanout exchange],
+) <fig-task5-2-1-queue>
+
 ==== 2.2. Direct Exchange
 
 *Тип обменника:* direct  
@@ -131,6 +151,26 @@ rabbitmqadmin declare binding source=booking_events destination=booking_processo
 - Бронирование подтверждено
 
 *Routing key:* `game.booked`
+
+#figure(
+  image("5/rmq_run_task2_direct_producer.png", width: 90%),
+  caption: [Выполнение producer для direct exchange с символом сна \*],
+) <fig-task5-2-2-producer>
+
+#figure(
+  image("5/rmq_run_task2_direct_consumer.png", width: 90%),
+  caption: [Запуск consumer для direct exchange],
+) <fig-task5-2-2-consumer>
+
+#figure(
+  image("5/rmq_run_task2_direct_consumer_output.png", width: 90%),
+  caption: [Вывод consumer при получении сообщений из direct exchange],
+) <fig-task5-2-2-consumer-output>
+
+#figure(
+  image("5/rmq_run_task2_direct_consumer_booking_events_from_web.png", width: 90%),
+  caption: [Direct exchange booking_events в RabbitMQ Management UI],
+) <fig-task5-2-2-web>
 
 ==== 2.3. Topic Exchange
 
@@ -156,6 +196,21 @@ rabbitmqadmin declare binding source=rent_events destination=rent_processor rout
 - Штраф начислен (`rent.penalty.charged`)
 
 *Routing key pattern:* `rent.order.created`
+
+#figure(
+  image("5/rmq_run_task2_topic_producer.png", width: 90%),
+  caption: [Выполнение producer для topic exchange с символом сна -],
+) <fig-task5-2-3-producer>
+
+#figure(
+  image("5/rmq_run_task2_topic_consumer_output.png", width: 90%),
+  caption: [Вывод consumer при получении сообщений из topic exchange],
+) <fig-task5-2-3-consumer-output>
+
+#figure(
+  image("5/rmq_run_task2_topic_consumer_booking_events_from_web.png", width: 90%),
+  caption: [Topic exchange rent_events в RabbitMQ Management UI],
+) <fig-task5-2-3-web>
 
 === Реализация
 
