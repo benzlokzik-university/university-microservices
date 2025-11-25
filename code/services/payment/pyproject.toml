@@ -1,0 +1,18 @@
+[project]
+name = "payment"
+version = "0.1.0"
+description = "Payment Service for Game Rental System"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "grpcio>=1.60.0",
+    "grpcio-tools>=1.60.0",
+    "aio-pika>=9.0.0",
+    "python-multipart>=0.0.6",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
