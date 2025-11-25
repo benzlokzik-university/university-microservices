@@ -1,0 +1,18 @@
+[project]
+name = "code"
+version = "0.1.0"
+description = "University Microservices Project - Game Rental System"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "services/gateway",
+    "services/game-catalog",
+    "services/booking",
+    "services/rating",
+    "services/user-account",
+    "services/rent",
+    "services/payment",
+]
