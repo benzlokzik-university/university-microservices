@@ -4,6 +4,8 @@ from unittest.mock import patch
 from fastapi import status
 from datetime import datetime
 
+from schemas import BookingResponse
+
 
 class TestRentIntegration:
     """Integration tests for rent operations."""
@@ -15,13 +17,13 @@ class TestRentIntegration:
             patch("main.initiate_payment_grpc") as mock_payment,
         ):
             # Mock booking response
-            mock_booking.return_value = {
-                "booking_id": "booking-123",
-                "game_id": "game-456",
-                "user_id": "user-789",
-                "status": "confirmed",
-                "pickup_date": datetime.now(),
-            }
+            mock_booking.return_value = BookingResponse(
+                booking_id="booking-123",
+                game_id="game-456",
+                user_id="user-789",
+                status="confirmed",
+                pickup_date=datetime.now(),
+            )
 
             # Mock payment response
             mock_payment.return_value = {"payment_id": "pay-123", "status": "initiated"}
@@ -51,13 +53,13 @@ class TestRentIntegration:
             patch("main.get_booking") as mock_booking,
             patch("main.initiate_payment_grpc") as mock_payment,
         ):
-            mock_booking.return_value = {
-                "booking_id": "booking-123",
-                "game_id": "game-456",
-                "user_id": "user-789",
-                "status": "confirmed",
-                "pickup_date": datetime.now().isoformat(),
-            }
+            mock_booking.return_value = BookingResponse(
+                booking_id="booking-123",
+                game_id="game-456",
+                user_id="user-789",
+                status="confirmed",
+                pickup_date=datetime.now(),
+            )
             mock_payment.return_value = {"payment_id": "pay-123", "status": "initiated"}
 
             create_response = client.post(
@@ -87,13 +89,13 @@ class TestRentIntegration:
             patch("main.get_booking") as mock_booking,
             patch("main.initiate_payment_grpc") as mock_payment,
         ):
-            mock_booking.return_value = {
-                "booking_id": "booking-123",
-                "game_id": "game-456",
-                "user_id": "user-789",
-                "status": "confirmed",
-                "pickup_date": datetime.now().isoformat(),
-            }
+            mock_booking.return_value = BookingResponse(
+                booking_id="booking-123",
+                game_id="game-456",
+                user_id="user-789",
+                status="confirmed",
+                pickup_date=datetime.now(),
+            )
             mock_payment.return_value = {"payment_id": "pay-123", "status": "initiated"}
 
             create_response = client.post(
@@ -133,13 +135,13 @@ class TestRentIntegration:
             patch("main.get_booking") as mock_booking,
             patch("main.initiate_payment_grpc") as mock_payment,
         ):
-            mock_booking.return_value = {
-                "booking_id": "booking-123",
-                "game_id": "game-456",
-                "user_id": "user-789",
-                "status": "confirmed",
-                "pickup_date": datetime.now().isoformat(),
-            }
+            mock_booking.return_value = BookingResponse(
+                booking_id="booking-123",
+                game_id="game-456",
+                user_id="user-789",
+                status="confirmed",
+                pickup_date=datetime.now(),
+            )
             mock_payment.return_value = {"payment_id": "pay-123", "status": "initiated"}
 
             create_response = client.post(
@@ -169,13 +171,13 @@ class TestRentIntegration:
             patch("main.get_booking") as mock_booking,
             patch("main.initiate_payment_grpc") as mock_payment,
         ):
-            mock_booking.return_value = {
-                "booking_id": "booking-123",
-                "game_id": "game-456",
-                "user_id": "user-789",
-                "status": "confirmed",
-                "pickup_date": datetime.now().isoformat(),
-            }
+            mock_booking.return_value = BookingResponse(
+                booking_id="booking-123",
+                game_id="game-456",
+                user_id="user-789",
+                status="confirmed",
+                pickup_date=datetime.now(),
+            )
             mock_payment.return_value = {"payment_id": "pay-123", "status": "initiated"}
 
             create_response = client.post(
