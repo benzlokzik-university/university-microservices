@@ -861,6 +861,7 @@ dependencies = [
 
 [package.dev-dependencies]
 test = [
+    { name = "httpx" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "pytest-cov" },
@@ -880,6 +881,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 test = [
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "pytest", specifier = ">=7.4.0" },
     { name = "pytest-asyncio", specifier = ">=0.21.0" },
     { name = "pytest-cov", specifier = ">=4.1.0" },
