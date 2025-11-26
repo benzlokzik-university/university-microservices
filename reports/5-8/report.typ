@@ -5,7 +5,7 @@
 #show: gost.with(
   ministry: "МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ",
   organization: (
-    full: "Федеральное государственное бюджетное образовательное учреждение высшего образования \"МИРЭА — Российский технологический университет\"", 
+    full: "Федеральное государственное бюджетное образовательное учреждение высшего образования \"МИРЭА — Российский технологический университет\"",
     short: "РТУ МИРЭА"
   ),
   udk: none,
@@ -17,11 +17,11 @@
   about: "по практическим работам №5-8",
   subject: "Микросервисная архитектура",
   manager: (
-    name: "Запорожских А.И.", 
+    name: "Запорожских А.И.",
     position: "Преподаватель"
   ),
   city: "Москва",
-  
+
 )
 
 #outline(title: "Содержание")
@@ -98,9 +98,9 @@ rabbitmqadmin declare queue name=notification_temporary auto_delete=true
 
 ==== Fanout Exchange
 
-*Тип обменника:* fanout  
-*Durable:* Да (сообщения сохраняются при выключении RabbitMQ)  
-*Символ сна:* `#`  
+*Тип обменника:* fanout
+*Durable:* Да (сообщения сохраняются при выключении RabbitMQ)
+*Символ сна:* `#`
 *Время сна:* 2 секунды
 
 Используется для широковещательной рассылки событий каталога игр всем подписанным сервисам.
@@ -131,9 +131,9 @@ rabbitmqadmin declare binding source=game_catalog_events destination=game_catalo
 
 ==== Direct Exchange
 
-*Тип обменника:* direct  
-*Durable:* Нет (сообщения могут не храниться при выключении RabbitMQ)  
-*Символ сна:* `*`  
+*Тип обменника:* direct
+*Durable:* Нет (сообщения могут не храниться при выключении RabbitMQ)
+*Символ сна:* `*`
 *Время сна:* 1 секунда
 
 Используется для маршрутизации событий бронирования с использованием routing key.
@@ -174,9 +174,9 @@ rabbitmqadmin declare binding source=booking_events destination=booking_processo
 
 ==== Topic Exchange
 
-*Тип обменника:* topic  
-*Durable:* Да (сообщения сохраняются при выключении RabbitMQ)  
-*Символ сна:* `-`  
+*Тип обменника:* topic
+*Durable:* Да (сообщения сохраняются при выключении RabbitMQ)
+*Символ сна:* `-`
 *Время сна:* 1.5 секунды
 
 Используется для маршрутизации событий аренды с использованием паттернов routing key.
@@ -1499,8 +1499,8 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис аккаунта пользователя (User Account)
 
-*Порт:* 8001  
-*База данных:* PostgreSQL  
+*Порт:* 8001
+*База данных:* PostgreSQL
 *Количество эндпоинтов:* 5
 
 Реализованные эндпоинты:
@@ -1521,8 +1521,8 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис каталога игр (Game Catalog)
 
-*Порт:* 8002  
-*База данных:* PostgreSQL  
+*Порт:* 8002
+*База данных:* PostgreSQL
 *Количество эндпоинтов:* 5
 
 Реализованные эндпоинты:
@@ -1542,7 +1542,7 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис бронирования (Booking)
 
-*Порт:* 8003  
+*Порт:* 8003
 *Количество эндпоинтов:* 3
 
 Реализованные эндпоинты:
@@ -1560,7 +1560,7 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис оплаты (Payment)
 
-*Порт:* 8004 (HTTP), 50051 (gRPC)  
+*Порт:* 8004 (HTTP), 50051 (gRPC)
 *Количество эндпоинтов:* 6
 
 Реализованные эндпоинты:
@@ -1582,8 +1582,8 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис аренды (Rent)
 
-*Порт:* 8005  
-*База данных:* PostgreSQL  
+*Порт:* 8005
+*База данных:* PostgreSQL
 *Количество эндпоинтов:* 6
 
 Реализованные эндпоинты:
@@ -1605,7 +1605,7 @@ curl http://localhost:8000/openapi.json > openapi.json
 
 ==== Сервис оценки (Rating)
 
-*Порт:* 8006  
+*Порт:* 8006
 *Количество эндпоинтов:* 4
 
 Реализованные эндпоинты:
@@ -1796,13 +1796,13 @@ async def publish_event(event_type: str, event_data: Dict[str, Any]):
     try:
         connection = await aio_pika.connect_robust(RABBITMQ_URL)
         channel = await connection.channel()
-        
+
         # Declare exchange
         exchange = await channel.declare_exchange(
             "payment_events",
             aio_pika.ExchangeType.TOPIC
         )
-        
+
         # Publish event
         message_body = json.dumps(event_data).encode()
         await exchange.publish(
@@ -1813,7 +1813,7 @@ async def publish_event(event_type: str, event_data: Dict[str, Any]):
             ),
             routing_key=event_type
         )
-        
+
         await connection.close()
         print(f"Published event: {event_type}")
     except Exception as e:
@@ -1864,17 +1864,17 @@ class MockPaymentGateway:
     ) -> Dict[str, str]:
         # Simulate network delay
         await asyncio.sleep(0.5)
-        
+
         # Randomly succeed or fail (90% success rate)
         success = random.random() > 0.1
-        
+
         transaction_id = f"TXN_{payment_id[:8]}_{random.randint(100000, 999999)}"
-        
+
         if success:
             status = "completed"
         else:
             status = "declined"
-        
+
         return {
             "transaction_id": transaction_id,
             "status": status,
@@ -1947,25 +1947,25 @@ class MockPerspectiveAPI:
         comment_text: str
     ) -> Tuple[bool, Dict[str, float]]:
         await asyncio.sleep(0.3)  # Simulate network delay
-        
+
         # Simple mock: check for some basic toxic words
         toxic_words = ["bad", "hate", "stupid", "terrible"]
         is_toxic = any(word in comment_text.lower() for word in toxic_words)
-        
+
         # Generate random scores
         toxicity_score = random.uniform(0.7, 0.95) if is_toxic else random.uniform(0.1, 0.4)
         spam_score = random.uniform(0.1, 0.3)
         profanity_score = random.uniform(0.0, 0.5) if is_toxic else random.uniform(0.0, 0.2)
-        
+
         scores = {
             "toxicity": toxicity_score,
             "spam": spam_score,
             "profanity": profanity_score,
         }
-        
+
         # Comment is moderated if toxicity > 0.5
         is_moderated = toxicity_score > 0.5
-        
+
         return is_moderated, scores
 ```
 
@@ -2089,6 +2089,8 @@ dependencies = [
 - Все сервисы используют aio-pika для работы с RabbitMQ
 
 === Реализация
+
+Исходный код проекта доступен в репозитории GitHub: https://github.com/benzlokzik-university/university-microservices
 
 ==== Структура проекта
 
@@ -2433,7 +2435,7 @@ def test_book_game_success(self, client, mock_user_service):
     """Test successful game booking with mocked user validation."""
     # Mock user validation to return True
     mock_user_service.return_value = True
-    
+
     response = client.post(
         "/api/v1/bookings",
         json={
@@ -2557,7 +2559,7 @@ jobs:
           - payment
           - rent
           - rating
-    
+
     services:
       postgres:
         image: postgres:15-alpine
@@ -2565,7 +2567,7 @@ jobs:
       rabbitmq:
         image: rabbitmq:3-management-alpine
         # ... конфигурация
-    
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
