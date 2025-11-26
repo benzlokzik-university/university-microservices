@@ -2,14 +2,11 @@
 Authentication utilities for User Account service.
 """
 
-from passlib.context import CryptContext
-from jose import JWTError, jwt
+import bcrypt
+from jose import jwt
 from datetime import datetime, timedelta
 from typing import Optional
 import os
-
-# Password hashing
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # JWT settings
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
@@ -19,19 +16,38 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against a hash."""
-    return pwd_context.verify(plain_password, hashed_password)
+    # Ensure password is bytes for bcrypt
+    if isinstance(plain_password, str):
+        plain_password = plain_password.encode("utf-8")
+
+    # Truncate to 72 bytes if necessary
+    if len(plain_password) > 72:
+        plain_password = plain_password[:72]
+
+    # Ensure hashed_password is bytes
+    if isinstance(hashed_password, str):
+        hashed_password = hashed_password.encode("utf-8")
+
+    return bcrypt.checkpw(plain_password, hashed_password)
 
 
 def get_password_hash(password: str) -> str:
     """Hash a password."""
-    # Ensure password is a string and truncate if necessary (bcrypt limit is 72 bytes)
-    if isinstance(password, bytes):
-        password = password.decode("utf-8")
+    # Ensure password is bytes for bcrypt
+    if isinstance(password, str):
+        password = password.encode("utf-8")
+
     # Truncate to 72 bytes to avoid bcrypt limitation
-    password_bytes = password.encode("utf-8")
-    if len(password_bytes) > 72:
-        password = password_bytes[:72].decode("utf-8", errors="ignore")
-    return pwd_context.hash(password)
+    # bcrypt has a hard limit of 72 bytes for passwords
+    if len(password) > 72:
+        password = password[:72]
+
+    # Generate salt and hash
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password, salt)
+
+    # Return as string (bcrypt returns bytes)
+    return hashed.decode("utf-8")
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
