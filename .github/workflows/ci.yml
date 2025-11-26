@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     services:
       postgres:
         image: postgres:15-alpine
@@ -24,7 +24,7 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-      
+
       rabbitmq:
         image: rabbitmq:3-management-alpine
         env:
@@ -37,7 +37,7 @@ jobs:
           --health-retries 5
         ports:
           - 5672:5672
-    
+
     strategy:
       matrix:
         service:
@@ -47,25 +47,26 @@ jobs:
           - payment
           - rent
           - rating
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    
+
     - name: Install UV
       run: |
         curl -LsSf https://astral.sh/uv/install.sh | sh
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-    
+
     - name: Install dependencies
       working-directory: ./code/services/${{ matrix.service }}
       run: |
+        uv sync
         uv sync --group test
-    
+
     - name: Run tests
       working-directory: ./code/services/${{ matrix.service }}
       env:
@@ -73,11 +74,10 @@ jobs:
         RABBITMQ_URL: amqp://guest:guest@localhost:5672/
       run: |
         uv run --group test pytest tests/ -v --cov=. --cov-report=xml --cov-report=term
-    
+
     - name: Upload coverage
       uses: codecov/codecov-action@v3
       with:
         file: ./code/services/${{ matrix.service }}/coverage.xml
         flags: ${{ matrix.service }}
         name: ${{ matrix.service }}-coverage
-
