@@ -12,22 +12,19 @@ from fastapi import FastAPI, HTTPException, status, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
-from datetime import datetime, timedelta
+from datetime import datetime
 import uvicorn
 import httpx
 
 from database import get_db, engine, Base
 from models import Order
 from schemas import (
+    BookingResponse,
     CreateOrderRequest,
     SendPickupNotificationRequest,
     ConfirmGameReceiptRequest,
-    SendReturnReminderRequest,
-    ExtendRentalPeriodRequest,
-    EndRentalPeriodRequest,
     ReturnGameRequest,
     ChargePenaltyRequest,
-    ConfirmGameReturnRequest,
     OrderResponse,
 )
 from grpc_client import initiate_payment_grpc
@@ -66,14 +63,14 @@ app.add_middleware(
 )
 
 
-async def get_booking(booking_id: str) -> dict:
+async def get_booking(booking_id: str) -> BookingResponse | None:
     """Get booking information from Booking service."""
     async with httpx.AsyncClient() as client:
         response = await client.get(
             f"{BOOKING_SERVICE_URL}/api/v1/bookings/{booking_id}"
         )
         if response.status_code == 200:
-            return response.json()
+            return BookingResponse.model_validate(response.json())
         return None
 
 
@@ -105,7 +102,7 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
             status_code=status.HTTP_404_NOT_FOUND, detail="Booking not found"
         )
 
-    if booking["status"] != "confirmed":
+    if booking.status != "confirmed":
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Booking must be confirmed before creating order",
@@ -117,10 +114,10 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
     # Create order
     db_order = Order(
         booking_id=request.booking_id,
-        game_id=booking["game_id"],
+        game_id=booking.game_id,
         user_id=request.user_id,
         status="created",
-        pickup_date=booking["pickup_date"],
+        pickup_date=booking.pickup_date,
         pickup_location=request.pickup_location,
         rental_days=request.rental_days,
         total_amount=total_amount,
@@ -148,7 +145,7 @@ async def create_order(request: CreateOrderRequest, db: Session = Depends(get_db
         {
             "order_id": db_order.order_id,
             "booking_id": request.booking_id,
-            "game_id": booking["game_id"],
+            "game_id": booking.game_id,
             "user_id": request.user_id,
             "total_amount": total_amount,
         },

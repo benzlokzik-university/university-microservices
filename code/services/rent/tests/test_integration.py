@@ -1,7 +1,6 @@
 """Integration tests for Rent service."""
 
-import pytest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import patch
 from fastapi import status
 from datetime import datetime
 
@@ -21,7 +20,7 @@ class TestRentIntegration:
                 "game_id": "game-456",
                 "user_id": "user-789",
                 "status": "confirmed",
-                "pickup_date": datetime.now().isoformat(),
+                "pickup_date": datetime.now(),
             }
 
             # Mock payment response

@@ -7,6 +7,18 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 
+class BookingResponse(BaseModel):
+    """Response schema for booking information from Booking service."""
+
+    booking_id: str
+    game_id: str
+    user_id: str
+    status: str
+    pickup_date: datetime
+
+    model_config = {"from_attributes": True}
+
+
 class CreateOrderRequest(BaseModel):
     """Request schema for creating an order."""
 
