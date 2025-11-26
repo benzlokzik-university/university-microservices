@@ -3,8 +3,7 @@ Database configuration and session management for Game Catalog service.
 """
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 import os
 
 # Database URL from environment variable or default
