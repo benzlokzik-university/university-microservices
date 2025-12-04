@@ -9,7 +9,6 @@ The gateway exposes OpenAPI documentation at /docs and /openapi.json
 """
 
 from fastapi import FastAPI, HTTPException, status
-from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
@@ -63,7 +62,6 @@ from models import (
     RefundResponse,
     # Common Models
     SuccessResponse,
-    ErrorResponse,
 )
 
 
@@ -82,16 +80,16 @@ app = FastAPI(
     title="Game Rental System API Gateway",
     description="""
     API Gateway для системы аренды настольных игр.
-    
+
     Этот сервис предоставляет единую точку входа для всех микросервисов системы:
-    
+
     - **Каталог игр** - управление каталогом игр
     - **Бронирование** - управление бронированиями
     - **Оценка** - управление оценками и комментариями
     - **Аккаунт пользователя** - управление пользователями
     - **Аренда** - управление арендой игр
     - **Оплата** - управление платежами
-    
+
     Все запросы проходят через этот шлюз и маршрутизируются к соответствующим микросервисам.
     """,
     version="1.0.0",

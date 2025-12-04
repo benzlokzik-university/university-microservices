@@ -4,7 +4,7 @@ Pydantic schemas for Game Catalog service.
 
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import BaseModel, Field
 
 
 class AddGameRequest(BaseModel):

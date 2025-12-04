@@ -22,16 +22,15 @@ test_engine = create_engine(
 )
 
 # Import after setting up test engine
-from database import Base
-from models import User
+from database import Base  # noqa: E402
 
 # Override the engine in database module
-import database
+import database  # noqa: E402
 
 database.engine = test_engine
 
-from main import app
-from database import get_db
+from main import app  # noqa: E402
+from database import get_db  # noqa: E402
 
 
 @pytest.fixture(scope="function", autouse=True)

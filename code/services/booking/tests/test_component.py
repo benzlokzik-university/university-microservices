@@ -4,9 +4,8 @@ These tests verify the service works with mocked dependencies (User Account serv
 """
 
 import pytest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import patch
 from fastapi.testclient import TestClient
-from datetime import datetime
 
 from main import app
 

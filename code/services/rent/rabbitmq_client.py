@@ -5,7 +5,7 @@ RabbitMQ client for Rent service to publish and consume domain events.
 import aio_pika
 import json
 import os
-from typing import Dict, Any, Callable, Optional
+from typing import Dict, Any, Callable
 
 
 RABBITMQ_URL = os.getenv("RABBITMQ_URL", "amqp://guest:guest@rabbitmq:5672/")

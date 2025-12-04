@@ -4,7 +4,6 @@ gRPC server for Payment service.
 
 import grpc
 from concurrent import futures
-import asyncio
 from datetime import datetime
 import uuid
 
@@ -79,7 +78,7 @@ async def serve_grpc(payments_db, refunds_db, port=50051):
 
     # Add servicer (will be properly implemented after proto generation)
     # For now, we'll use a simpler approach
-    servicer = PaymentServiceServicer(payments_db, refunds_db)
+    servicer = PaymentServiceServicer(payments_db, refunds_db)  # noqa: F841
 
     # Register service (will be done after proto generation)
     # payment_pb2_grpc.add_PaymentServiceServicer_to_server(servicer, server)

@@ -3,7 +3,6 @@
 These tests verify the service works with a real database (SQLite in-memory for testing).
 """
 
-import pytest
 from fastapi import status
 
 

@@ -4,7 +4,7 @@ Game Catalog Service - FastAPI application.
 This service handles game catalog management, search, and availability tracking.
 """
 
-from fastapi import FastAPI, HTTPException, status, Depends, Query
+from fastapi import FastAPI, HTTPException, status, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import or_, and_

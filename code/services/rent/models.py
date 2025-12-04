@@ -2,7 +2,7 @@
 Database models for Rent service.
 """
 
-from sqlalchemy import Column, String, Integer, Float, DateTime, Text
+from sqlalchemy import Column, String, Integer, Float, DateTime
 from sqlalchemy.sql import func
 from database import Base
 import uuid

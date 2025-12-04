@@ -4,7 +4,7 @@ Mocked payment gateway (Эквайринг) for Payment service.
 
 import random
 import asyncio
-from typing import Dict, Optional
+from typing import Dict
 
 
 class MockPaymentGateway:

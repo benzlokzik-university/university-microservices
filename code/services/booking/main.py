@@ -5,7 +5,7 @@ This service handles game bookings. It calls the User Account service
 to validate users (nested function call requirement).
 """
 
-from fastapi import FastAPI, HTTPException, status, Depends
+from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from datetime import datetime
@@ -13,7 +13,7 @@ import uvicorn
 import uuid
 
 from schemas import BookGameRequest, CancelBookingRequest, BookingResponse
-from user_service import validate_user, get_user
+from user_service import validate_user
 from rabbitmq_client import publish_event
 
 

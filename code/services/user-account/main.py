@@ -21,7 +21,6 @@ from schemas import (
     AuthResponse,
 )
 from auth import get_password_hash, verify_password, create_access_token
-from datetime import timedelta
 
 
 @asynccontextmanager

@@ -8,15 +8,12 @@ This service handles payments and refunds. It includes:
 - RabbitMQ for publishing domain events
 """
 
-from fastapi import FastAPI, HTTPException, status, Depends
+from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from datetime import datetime
 import uvicorn
 import uuid
-import asyncio
-import grpc
-from concurrent import futures
 
 from schemas import (
     InitiatePaymentRequest,

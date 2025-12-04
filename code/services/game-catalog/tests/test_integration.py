@@ -1,6 +1,5 @@
 """Integration tests for Game Catalog service."""
 
-import pytest
 from fastapi import status
 
 

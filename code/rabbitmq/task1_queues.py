@@ -6,7 +6,7 @@
 """
 
 import asyncio
-from aio_pika import connect_robust, ExchangeType, Message
+from aio_pika import connect_robust, Message
 from aio_pika.abc import AbstractConnection, AbstractChannel
 
 
@@ -18,7 +18,7 @@ async def create_exclusive_queue():
     channel: AbstractChannel = await connection.channel()
 
     # Эксклюзивная очередь для поиска игры (временная операция)
-    queue = await channel.declare_queue(
+    queue = await channel.declare_queue(  # noqa: F841
         "game_search_temporary",
         exclusive=True,  # Очередь удалится при закрытии соединения
     )
@@ -45,7 +45,7 @@ async def create_durable_queue():
     channel: AbstractChannel = await connection.channel()
 
     # Durable очередь для события "Пользователь зарегистрирован"
-    queue = await channel.declare_queue(
+    queue = await channel.declare_queue(  # noqa: F841
         "user_registered",
         durable=True,  # Очередь сохранится при перезапуске RabbitMQ
     )
