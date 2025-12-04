@@ -7,8 +7,22 @@ on:
     branches: [ main, develop ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install the latest version of ruff
+      uses: astral-sh/ruff-action@v3
+      with:
+        version: "latest"
+        args: check .
+        src: "./code/services"
+
   test:
     runs-on: ubuntu-latest
+    needs: lint
 
     services:
       postgres:
