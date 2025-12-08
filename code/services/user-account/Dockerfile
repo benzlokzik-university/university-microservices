@@ -1,26 +1,28 @@
-FROM python:3.12-slim
+FROM ghcr.io/astral-sh/uv:python3.12-alpine AS builder
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    postgresql-client \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache gcc musl-dev
 
-# Copy dependency files
-COPY pyproject.toml ./
+COPY pyproject.toml uv.lock ./
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -e .
+RUN uv sync --no-group test --frozen
 
-# Copy application code
+FROM alpine:3.23
+
+WORKDIR /app
+
+RUN apk add --no-cache libstdc++ libgcc
+
+COPY --from=builder /usr/local /usr/local
+COPY --from=builder /app/.venv /app/.venv
 COPY . .
 
-# Expose port
+RUN ln -sf /usr/local/bin/python3.12 /app/.venv/bin/python && \
+    ln -sf /usr/local/bin/python3.12 /app/.venv/bin/python3 && \
+    ln -sf /usr/local/bin/python3.12 /app/.venv/bin/python3.12 && \
+    find /app/.venv/bin -type f -executable -exec sed -i '1s|^#!.*|#!/app/.venv/bin/python|' {} \;
+
 EXPOSE 8001
 
-# Run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001"]
-
+CMD ["/app/.venv/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001"]

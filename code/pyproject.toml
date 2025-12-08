@@ -6,13 +6,13 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
-[tool.uv.workspace]
-members = [
-    "services/gateway",
-    "services/game-catalog",
-    "services/booking",
-    "services/rating",
-    "services/user-account",
-    "services/rent",
-    "services/payment",
-]
+# [tool.uv.workspace]
+# members = [
+#     "services/gateway",
+#     "services/game-catalog",
+#     "services/booking",
+#     "services/rating",
+#     "services/user-account",
+#     "services/rent",
+#     "services/payment",
+# ]
