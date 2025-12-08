@@ -8,12 +8,14 @@ jobs:
   tests:
     uses: ./.github/workflows/tests.yml
 
-  build-and-release:
+  build:
     needs: tests
     runs-on: ubuntu-latest
     permissions:
-      contents: write
       packages: write
+    strategy:
+      matrix:
+        service: [gateway, booking]
     steps:
       - uses: actions/checkout@v6
 
@@ -27,11 +29,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata for gateway
-        id: meta-gateway
+      - name: Extract metadata
+        id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}/gateway
+          images: ghcr.io/${{ github.repository }}/${{ matrix.service }}
           tags: |
             type=ref,event=branch
             type=sha,prefix={{branch}}-
@@ -39,39 +41,27 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Extract metadata for booking
-        id: meta-booking
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.repository }}/booking
-          tags: |
-            type=ref,event=branch
-            type=sha,prefix={{branch}}-
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=raw,value=latest,enable={{is_default_branch}}
-
-      - name: Build and push gateway image
+      - name: Build and push image
         uses: docker/build-push-action@v5
         with:
-          context: ./code/services/gateway
-          file: ./code/services/gateway/Dockerfile
+          context: ./code/services/${{ matrix.service }}
+          file: ./code/services/${{ matrix.service }}/Dockerfile
           push: true
-          tags: ${{ steps.meta-gateway.outputs.tags }}
-          labels: ${{ steps.meta-gateway.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Build and push booking image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./code/services/booking
-          file: ./code/services/booking/Dockerfile
-          push: true
-          tags: ${{ steps.meta-booking.outputs.tags }}
-          labels: ${{ steps.meta-booking.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        service: [gateway, booking]
+    steps:
+      - uses: actions/checkout@v6
 
       - name: Get version tag
         id: version
@@ -84,38 +74,18 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
 
-      - name: Create gateway release
+      - name: Create ${{ matrix.service }} release
         uses: softprops/action-gh-release@v1
         with:
-          tag: gateway-${{ steps.version.outputs.version }}
-          name: Gateway ${{ steps.version.outputs.version }}
+          tag: ${{ matrix.service }}-${{ steps.version.outputs.version }}
+          name: ${{ matrix.service }} ${{ steps.version.outputs.version }}
           body: |
-            Gateway service release
+            ${{ matrix.service }} service release
 
             **Image Tags:**
-            - `ghcr.io/${{ github.repository }}/gateway:latest`
-            - `ghcr.io/${{ github.repository }}/gateway:${{ github.ref_name }}`
-            - `ghcr.io/${{ github.repository }}/gateway:${{ github.ref_name }}-${{ github.sha }}`
-
-            **Commit:** ${{ github.sha }}
-            **Branch:** ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create booking release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag: booking-${{ steps.version.outputs.version }}
-          name: Booking ${{ steps.version.outputs.version }}
-          body: |
-            Booking service release
-
-            **Image Tags:**
-            - `ghcr.io/${{ github.repository }}/booking:latest`
-            - `ghcr.io/${{ github.repository }}/booking:${{ github.ref_name }}`
-            - `ghcr.io/${{ github.repository }}/booking:${{ github.ref_name }}-${{ github.sha }}`
+            - `ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest`
+            - `ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.ref_name }}`
+            - `ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.ref_name }}-${{ github.sha }}`
 
             **Commit:** ${{ github.sha }}
             **Branch:** ${{ github.ref_name }}
