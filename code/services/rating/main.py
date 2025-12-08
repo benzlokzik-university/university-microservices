@@ -10,6 +10,7 @@ from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from datetime import datetime
+from prometheus_fastapi_instrumentator import Instrumentator
 import uvicorn
 import uuid
 import httpx
@@ -55,6 +56,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Configure Prometheus metrics
+Instrumentator().instrument(app).expose(app)
 
 
 async def update_game_rating(game_id: str):
