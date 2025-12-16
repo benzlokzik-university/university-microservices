@@ -133,7 +133,7 @@ jobs:
       - name: Copy image from GHCR to Yandex Cloud
         run: |
           docker buildx imagetools create \
-            -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ matrix.service }}:latest \
+            -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/board-games-backend/${{ matrix.service }}:latest \
             ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest
 
   deploy-on-yc:
