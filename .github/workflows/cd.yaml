@@ -130,10 +130,22 @@ jobs:
           username: json_key
           password: ${{ secrets.YC_KEYS }}
 
+      - name: Map service to YC name
+        id: yc_meta
+        run: |
+          case "${{ matrix.service }}" in
+            gateway)
+              echo "name=benzlokzik-gateway" >> $GITHUB_OUTPUT
+              ;;
+            booking)
+              echo "name=PointThrow-booking" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
       - name: Copy image from GHCR to Yandex Cloud
         run: |
           docker buildx imagetools create \
-            -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/board-games-backend/${{ matrix.service }}:latest \
+            -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/board-games-backend/${{ steps.yc_meta.outputs.name }}:latest \
             ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest
 
   deploy-on-yc:
@@ -143,12 +155,24 @@ jobs:
       matrix:
         service: [gateway, booking]
     steps:
+      - name: Map service to YC name
+        id: yc_meta
+        run: |
+          case "${{ matrix.service }}" in
+            gateway)
+              echo "name=benzlokzik-gateway" >> $GITHUB_OUTPUT
+              ;;
+            booking)
+              echo "name=PointThrow-booking" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
       - name: Deploy ${{ matrix.service }} serverless container
         uses: yc-actions/yc-sls-container-deploy@v4
         with:
           yc-sa-json-credentials: ${{ secrets.YC_KEYS }}
-          container-name: ${{ matrix.service }}
+          container-name: ${{ steps.yc_meta.outputs.name }}
           folder-id: ${{ secrets.YC_FOLDER_ID }}
-          revision-image-url: cr.yandex/${{ secrets.YC_REGISTRY_ID }}/board-games-backend/${{ matrix.service }}:latest
+          revision-image-url: cr.yandex/${{ secrets.YC_REGISTRY_ID }}/board-games-backend/${{ steps.yc_meta.outputs.name }}:latest
           revision-service-account-id: ${{ secrets.YC_SA_ID }}
           revision-memory: 512Mb
