@@ -15,7 +15,7 @@ jobs:
       packages: write
     strategy:
       matrix:
-        service: [benzlokzik-gateway, PointThrow-booking]
+        service: [gateway, booking]
     steps:
       - uses: actions/checkout@v6
 
@@ -52,7 +52,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  release:
+  release-on-github:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -74,11 +74,23 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
 
+      - name: Map service to release name
+        id: release_meta
+        run: |
+          case "${{ matrix.service }}" in
+            gateway)
+              echo "name=benzlokzik-gateway" >> $GITHUB_OUTPUT
+              ;;
+            booking)
+              echo "name=PointThrow-booking" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
       - name: Create ${{ matrix.service }} release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ matrix.service }}-${{ steps.version.outputs.version }}
-          name: ${{ matrix.service }} ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.release_meta.outputs.name }}-${{ steps.version.outputs.version }}
+          name: ${{ steps.release_meta.outputs.name }} ${{ steps.version.outputs.version }}
           target_commitish: ${{ github.sha }}
           body: |
             ${{ matrix.service }} service release
