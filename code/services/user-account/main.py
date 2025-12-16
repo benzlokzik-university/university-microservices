@@ -8,6 +8,7 @@ from fastapi import FastAPI, HTTPException, status, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
+from prometheus_fastapi_instrumentator import Instrumentator
 import uvicorn
 
 from database import get_db, engine, Base
@@ -53,6 +54,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Configure Prometheus metrics
+Instrumentator().instrument(app).expose(app)
 
 
 @app.post(

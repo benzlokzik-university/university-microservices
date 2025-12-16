@@ -1,0 +1,59 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'microservices'
+    scrape_interval: 15s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets:
+          - 'gateway:8000'
+          - 'user-account:8001'
+          - 'game-catalog:8002'
+          - 'booking:8003'
+          - 'payment:8004'
+          - 'rent:8005'
+          - 'rating:8006'
+        labels:
+          environment: 'production'
+          monitoring: 'enabled'
+
+  - job_name: 'postgres-user-account'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - 'postgres-exporter-user-account:9187'
+        labels:
+          environment: 'production'
+          monitoring: 'enabled'
+          database: 'user-account'
+
+  - job_name: 'postgres-game-catalog'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - 'postgres-exporter-game-catalog:9187'
+        labels:
+          environment: 'production'
+          monitoring: 'enabled'
+          database: 'game-catalog'
+
+  - job_name: 'postgres-rent'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - 'postgres-exporter-rent:9187'
+        labels:
+          environment: 'production'
+          monitoring: 'enabled'
+          database: 'rent'
+
+  - job_name: 'rabbitmq'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - 'rabbitmq-exporter:9419'
+        labels:
+          environment: 'production'
+          monitoring: 'enabled'

@@ -11,6 +11,7 @@ The gateway exposes OpenAPI documentation at /docs and /openapi.json
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from prometheus_fastapi_instrumentator import Instrumentator
 import uvicorn
 
 from models import (
@@ -107,6 +108,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Configure Prometheus metrics
+Instrumentator().instrument(app).expose(app)
 
 
 # ============================================================================

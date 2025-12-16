@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
 from datetime import datetime
+from prometheus_fastapi_instrumentator import Instrumentator
 import uvicorn
 import httpx
 
@@ -61,6 +62,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Configure Prometheus metrics
+Instrumentator().instrument(app).expose(app)
 
 
 async def get_booking(booking_id: str) -> BookingResponse | None:
