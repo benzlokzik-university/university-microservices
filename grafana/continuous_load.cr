@@ -25,7 +25,7 @@ ENDPOINTS = {
 def make_request(service_name : String, base_url : String, endpoint : String) : Int32?
   url = "#{base_url}#{endpoint}"
   begin
-    response = HTTP::Client.get(url, connect_timeout: 2.seconds, read_timeout: 2.seconds)
+    response = HTTP::Client.get(url)
     response.status_code
   rescue
     nil
@@ -51,7 +51,7 @@ def generate_load(service_name : String, base_url : String, duration : Int32, in
     end
 
     sleep_interval = interval + random.rand(-0.5..0.5)
-    sleep sleep_interval
+    sleep sleep_interval.seconds
   end
 
   puts "✅ #{service_name}: Completed #{request_count} requests"
@@ -66,19 +66,16 @@ def main
   puts "   Press Ctrl+C to stop early\n"
 
   channel = Channel(Int32).new
-  fibers = [] of Fiber
 
   Signal::INT.trap do
     puts "\n\n⏹️  Stopping load generation..."
-    fibers.each(&.kill)
     exit 0
   end
 
   SERVICES.each do |service_name, base_url|
-    fiber = spawn do
+    spawn do
       generate_load(service_name, base_url, duration, interval, channel)
     end
-    fibers << fiber
   end
 
   total_requests = 0
@@ -91,10 +88,5 @@ def main
   puts "   Dashboard: Microservices Overview"
 end
 
-begin
-  main
-rescue ex : Interrupt
-  puts "\n\n⏹️  Interrupted by user"
-  exit 0
-end
+main
 
